@@ -1,0 +1,20 @@
+{
+  "name": "nazay-functions",
+  "description": "Nazay web sitesi form API'si (Firebase Cloud Functions)",
+  "main": "index.js",
+  "private": true,
+  "engines": {
+    "node": "22"
+  },
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "firebase-admin": "^12.3.0",
+    "firebase-functions": "^7.3.2",
+    "nodemailer": "^6.9.14",
+    "pg": "^8.12.0"
+  }
+}

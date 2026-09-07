@@ -1,6 +1,7 @@
 /**
  * NAZAY TERCÜME — Corporate Website JavaScript
- * Handles: Sticky header, mobile nav, scroll animations, active nav link
+ * Handles: Sticky header, mobile nav, scroll animations, active nav link,
+ *          SSS akordiyonu, teklif formu, mobil alt çubuk, dönüşüm takibi
  */
 
 'use strict';
@@ -100,7 +101,8 @@ function initScrollAnimations() {
   const elements = document.querySelectorAll(
     '.service-card, .review-card, .process-step, .contact-card, ' +
     '.highlight-row, .mini-card, .about-visual-main, .about-content, ' +
-    '.section-header'
+    '.section-header, .doctype-card, .faq-item, .ref-item, ' +
+    '.quote-form, .quote-estimate'
   );
 
   elements.forEach(el => {
@@ -243,7 +245,195 @@ function injectActiveNavStyle() {
 
 
 /* ============================================================
-   9. Init on DOM Ready
+   9. Dönüşüm Takibi
+   ------------------------------------------------------------
+   data-track="olay_adi" taşıyan her bağlantının tıklanması
+   Google Analytics'e olay olarak gönderilir. GA kurulu değilse
+   (index.html'deki snippet yorum satırındaysa) sessizce geçer.
+   ============================================================ */
+function track(eventName, params) {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', eventName, params || {});
+  }
+}
+
+function initTracking() {
+  document.querySelectorAll('[data-track]').forEach(el => {
+    el.addEventListener('click', () => {
+      track(el.getAttribute('data-track'), {
+        link_text: (el.textContent || '').trim().slice(0, 60)
+      });
+    });
+  });
+}
+
+
+/* ============================================================
+   10. SSS Akordiyonu
+   ============================================================ */
+function initFaq() {
+  const items = document.querySelectorAll('.faq-item');
+  if (!items.length) return;
+
+  items.forEach(item => {
+    const question = item.querySelector('.faq-q');
+    const answer   = item.querySelector('.faq-a');
+    if (!question || !answer) return;
+
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+
+      // Aynı anda tek soru açık kalsın
+      items.forEach(other => {
+        if (other === item) return;
+        other.classList.remove('open');
+        const oq = other.querySelector('.faq-q');
+        const oa = other.querySelector('.faq-a');
+        if (oq) oq.setAttribute('aria-expanded', 'false');
+        if (oa) oa.style.maxHeight = null;
+      });
+
+      item.classList.toggle('open', !isOpen);
+      question.setAttribute('aria-expanded', String(!isOpen));
+      answer.style.maxHeight = isOpen ? null : answer.scrollHeight + 'px';
+
+      if (!isOpen) track('faq_open', { question: (question.textContent || '').trim().slice(0, 80) });
+    });
+  });
+
+  // Dil değişince açık cevabın yüksekliği yeniden hesaplansın
+  document.addEventListener('nazay:langchange', () => {
+    items.forEach(item => {
+      const answer = item.querySelector('.faq-a');
+      if (item.classList.contains('open') && answer) {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+}
+
+
+/* ============================================================
+   11. Teklif Formu Gönderimi
+   ============================================================ */
+function whatsappYedegi(data) {
+  const satirlar = [
+    'Merhaba, teklif talebim:',
+    `Belge: ${data.docType}`,
+    `Dil: ${data.sourceLang} → ${data.targetLang}`,
+    `Sayfa: ${data.pageCount}`,
+    `Teslim: ${data.urgency}`,
+    `Noter onayı: ${data.notarized}`,
+    `Ad Soyad: ${data.clientName}`,
+    `Telefon: ${data.clientPhone}`
+  ];
+  if (data.clientEmail) satirlar.push(`E-posta: ${data.clientEmail}`);
+  if (data.clientNotes) satirlar.push(`Not: ${data.clientNotes}`);
+
+  return 'https://wa.me/905436439897?text=' + encodeURIComponent(satirlar.join('\n'));
+}
+
+function initQuoteForm() {
+  const form    = document.getElementById('quote-form');
+  const status  = document.getElementById('qf-status');
+  const submit  = document.getElementById('qf-submit');
+  const consent = document.getElementById('qf-consent');
+  if (!form || !status || !submit) return;
+
+  function durum(mesaj, tip, ekHtml) {
+    status.className = 'qf-status qf-status-' + tip;
+    status.innerHTML = mesaj + (ekHtml || '');
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = {
+      docType:     form.docType.value,
+      sourceLang:  form.sourceLang.value,
+      targetLang:  form.targetLang.value,
+      pageCount:   form.pageCount.value,
+      urgency:     form.urgency.options[form.urgency.selectedIndex].text,
+      notarized:   form.notarized.checked ? 'Evet' : 'Hayır',
+      clientName:  form.clientName.value.trim(),
+      clientPhone: form.clientPhone.value.trim(),
+      clientEmail: form.clientEmail.value.trim(),
+      clientNotes: form.clientNotes.value.trim()
+    };
+
+    if (!data.clientName || !data.clientPhone) {
+      durum(NazayLang.t('ui.errRequired') || 'Lütfen ad soyad ve telefon alanlarını doldurun.', 'error');
+      return;
+    }
+    if (consent && !consent.checked) {
+      durum(NazayLang.t('ui.errConsent') || 'Devam etmek için KVKK metnini onaylamanız gerekiyor.', 'error');
+      return;
+    }
+
+    submit.disabled = true;
+    durum(NazayLang.t('ui.sending') || 'Gönderiliyor...', 'pending');
+
+    try {
+      const res = await fetch('/api/translation-quotes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+
+      durum(NazayLang.t('ui.success') || 'Talebiniz alındı. En kısa sürede size dönüş yapacağız.', 'success');
+      track('quote_submitted', { doc_type: data.docType, urgency: data.urgency });
+      form.reset();
+    } catch (err) {
+      // Sunucuya ulaşılamadıysa kullanıcı boşta kalmasın: WhatsApp'a yönlendir
+      console.error('Teklif gönderilemedi:', err);
+      durum(
+        NazayLang.t('ui.error') || 'Gönderilemedi. Lütfen WhatsApp veya telefon üzerinden bize ulaşın.',
+        'error',
+        ` <a href="${whatsappYedegi(data)}" target="_blank" rel="noopener" class="qf-status-link">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>`
+      );
+      track('quote_failed');
+    } finally {
+      submit.disabled = false;
+    }
+  });
+}
+
+
+/* ============================================================
+   12. Mobil Alt Çubuk
+   ------------------------------------------------------------
+   Hero geçildikten sonra görünür; yüzen WhatsApp butonu
+   mobilde CSS ile gizlenir (çakışmasın diye).
+   ============================================================ */
+function initMobileBar() {
+  const bar = document.getElementById('mobile-bar');
+  const heroSection = document.getElementById('hero');
+  if (!bar || !heroSection) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      bar.classList.toggle('visible', !entry.isIntersecting);
+    });
+  }, { threshold: 0, rootMargin: '-120px 0px 0px 0px' });
+
+  observer.observe(heroSection);
+}
+
+
+/* ============================================================
+   13. Footer Yılı
+   ============================================================ */
+function initFooterYear() {
+  const el = document.getElementById('footer-year');
+  if (el) el.textContent = String(new Date().getFullYear());
+}
+
+
+/* ============================================================
+   14. Init on DOM Ready
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
@@ -251,5 +441,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initFloatingButton();
   animateCounters();
   injectActiveNavStyle();
+  initTracking();
+  initFaq();
+  initQuoteForm();
+  initMobileBar();
+  initFooterYear();
   handleScroll(); // run once on load
 });

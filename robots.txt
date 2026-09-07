@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nazay.com.tr/sitemap.xml

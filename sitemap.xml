@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://nazay.com.tr/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://nazay.com.tr/nazay/index.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://nazay.com.tr/nazay/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nazay.com.tr/nazay/index.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://nazay.com.tr/nazay/index.html?lang=ar"/>
+  </url>
+
+  <url>
+    <loc>https://nazay.com.tr/nazay/hizmetler/diploma-cevirisi.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://nazay.com.tr/nazay/hizmetler/pasaport-cevirisi.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://nazay.com.tr/nazay/hizmetler/vekaletname-cevirisi.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://nazay.com.tr/nazay/kvkk.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://nazay.com.tr/nazay-bahce/index.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+</urlset>

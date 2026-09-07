@@ -2,23 +2,59 @@ const appContainer = document.getElementById('app');
 
 // --- Page Components ---
 
+// Ok ve zarf ikonları (harici ikon kütüphanesi yüklemeden)
+const ICON_ARROW = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+const ICON_MAIL  = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7.5 8.5 5.5 8.5-5.5"/></svg>';
+
 const LandingPage = `
   <div class="page active" id="landing-page">
-    <div class="landing-container">
-      <div class="split bahce" data-target="bahce">
-        <div class="split-content">
-          <h1>Nazay Bahçe</h1>
-          <p>Doğanın İçinde Unutulmaz Anlar</p>
-          <button class="explore-btn">Keşfet</button>
-        </div>
+    <div class="landing">
+
+      <header class="landing-brand">
+        <span class="lb-name">NAZAY</span>
+        <span class="lb-loc">Üsküdar · İstanbul</span>
+      </header>
+
+      <div class="landing-panels">
+
+        <a class="panel panel-bahce" href="./nazay-bahce/index.html" aria-label="Nazay Bahçe sitesine git">
+          <span class="panel-media"></span>
+          <span class="panel-veil"></span>
+          <span class="panel-body">
+            <span class="panel-logo">
+              <img src="assets/logo-bahce.jpg" alt="Nazay Bahçe logosu" width="440" height="440">
+            </span>
+            <h1>Nazay Bahçe</h1>
+            <p>Doğanın içinde unutulmaz anlar</p>
+            <span class="panel-chips">
+              <span>Nişan</span><span>Kına</span><span>Davet</span><span>İftar</span>
+            </span>
+            <span class="panel-cta">İncele ${ICON_ARROW}</span>
+          </span>
+        </a>
+
+        <a class="panel panel-tercume" href="./nazay/index.html" aria-label="Nazay Tercüme sitesine git">
+          <span class="panel-media"></span>
+          <span class="panel-veil"></span>
+          <span class="panel-body">
+            <span class="panel-logo">
+              <img src="assets/logo-tercume.jpg" alt="Nazay Yeminli Tercüme logosu" width="440" height="344">
+            </span>
+            <h1>Nazay Tercüme</h1>
+            <p>Profesyonel ve güvenilir dil hizmetleri</p>
+            <span class="panel-chips">
+              <span>Yeminli</span><span>Noter</span><span>Apostil</span><span>50+ Dil</span>
+            </span>
+            <span class="panel-cta">İncele ${ICON_ARROW}</span>
+          </span>
+        </a>
+
       </div>
-      <div class="split tercume" data-target="tercume">
-        <div class="split-content">
-          <h1>Nazay Tercüme</h1>
-          <p>Profesyonel ve Güvenilir Dil Hizmetleri</p>
-          <button class="explore-btn">İncele</button>
-        </div>
-      </div>
+
+      <footer class="landing-foot">
+        <a href="mailto:nazayistanbul@gmail.com">${ICON_MAIL} nazayistanbul@gmail.com</a>
+      </footer>
+
     </div>
   </div>
 `;
@@ -37,7 +73,7 @@ const BahcePage = `
       <div class="hero-content">
         <h1>Üsküdar'ın Kalbinde,<br>Doğayla İç İçe</h1>
         <p>Nişan, kına, iftar organizasyonları ve özel davetleriniz için ferah atmosferi, üstün temizlik anlayışı ve merkezi konumuyla hizmetinizdeyiz.</p>
-        <button class="btn btn-primary" onclick="window.location.href='mailto:info@nazay.com'">Rezervasyon Yap</button>
+        <button class="btn btn-primary" onclick="window.location.href='mailto:nazayistanbul@gmail.com'">Rezervasyon Yap</button>
       </div>
     </section>
 
@@ -84,7 +120,7 @@ const TercumePage = `
       <div class="hero-content">
         <h1>Global İletişimde<br><span>Güvenilir Çözüm Ortaklığınız</span></h1>
         <p>Üsküdar merkezli Nazay Tercüme Dil Hizmetleri Ltd. Şti. olarak tüm dünya dillerinde profesyonel, hızlı ve yeminli tercüme hizmetleri sunuyoruz.</p>
-        <button class="btn btn-primary" onclick="window.location.href='mailto:info@nazay.com'">Hemen Teklif Al</button>
+        <button class="btn btn-primary" onclick="window.location.href='mailto:nazayistanbul@gmail.com'">Hemen Teklif Al</button>
       </div>
     </section>
 
@@ -157,19 +193,8 @@ function loadNewPage(pageKey) {
 
 function attachEventListeners() {
   if (currentPage === 'landing') {
-    const splits = document.querySelectorAll('.split');
-    splits.forEach(split => {
-      split.addEventListener('click', () => {
-        const target = split.getAttribute('data-target');
-        if(target === 'tercume') {
-          window.location.href = './nazay/index.html';
-        } else if(target === 'bahce') {
-          window.location.href = './nazay bahce/index.html';
-        } else if(target) {
-          renderPage(target);
-        }
-      });
-    });
+    // Paneller gerçek <a> bağlantısı; tarayıcı kendi yönlendirir.
+    // Böylece arama motorları iki siteyi de tarayabilir, orta tık / yeni sekme çalışır.
   } else {
     const backBtns = document.querySelectorAll('.back-btn');
     backBtns.forEach(btn => {
