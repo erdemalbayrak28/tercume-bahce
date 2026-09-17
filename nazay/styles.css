@@ -312,6 +312,20 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
 
 /* Header actions */
 .header-actions { display: flex; align-items: center; gap: 12px; }
+.header-actions .btn { padding: 11px 20px; }
+
+/* Dar ekranda iki buton + menü düğmesi sığsın diye */
+@media (max-width: 560px) {
+  .header-actions { gap: 8px; }
+  .header-actions .btn { padding: 9px 12px; font-size: 0.82rem; gap: 6px; }
+  /* WhatsApp yalnızca simge olarak kalır, Teklif Al yazısı görünür */
+  .header-actions .btn-whatsapp { font-size: 0; gap: 0; padding: 9px 11px; }
+  .header-actions .btn-whatsapp i { font-size: 1.15rem; }
+}
+@media (max-width: 400px) {
+  .header-quote i { display: none; }
+  .nav-container { gap: 8px; }
+}
 
 /* Mobile Toggle */
 .mobile-toggle {
