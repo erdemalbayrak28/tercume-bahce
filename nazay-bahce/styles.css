@@ -165,6 +165,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
   padding: 16px 0;
 }
 
@@ -172,6 +173,8 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .logo-img {
@@ -212,6 +215,7 @@ img {
 }
 
 .nav-links a {
+  white-space: nowrap;
   font-weight: 500;
   font-size: 0.95rem;
   color: var(--text-dark);
@@ -242,6 +246,11 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
+}
+
+.header-actions .btn {
+  white-space: nowrap;
 }
 
 .btn {
@@ -1215,6 +1224,33 @@ img {
 }
 
 /* Responsive Media Queries */
+/* Header: dar masaüstü / tablet */
+@media (max-width: 1400px) {
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 0.9rem; }
+  .logo-main { font-size: 1.5rem; }
+  .logo-sub { letter-spacing: 0.18em; }
+  .header-actions { gap: 8px; }
+  .header-actions .btn { padding: 10px 18px; }
+  .header-call-btn .btn-text { display: none; }
+}
+
+@media (max-width: 1100px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    padding: 30px;
+    box-shadow: var(--shadow-md);
+    display: none;
+  }
+  .nav-links.active { display: flex; }
+  .mobile-toggle { display: block; }
+}
+
 @media (max-width: 992px) {
   .hero-title { font-size: 3rem; }
   .about-grid, .space-content, .contact-grid { grid-template-columns: 1fr; }
@@ -1252,19 +1288,6 @@ img {
   .header-wa-btn .btn-text {
     display: none;
   }
-  .nav-links {
-    position: fixed;
-    top: 65px;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    flex-direction: column;
-    padding: 30px;
-    box-shadow: var(--shadow-md);
-    display: none;
-  }
-  .nav-links.active { display: flex; }
-  .mobile-toggle { display: block; }
   .top-bar-info { display: none; }
   .hero-title { font-size: 2.3rem; }
   .section-title { font-size: 2.2rem; }

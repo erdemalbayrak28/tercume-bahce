@@ -420,12 +420,27 @@
 
       <!-- Tab 1: Open Garden -->
       <div id="acikBahce" class="space-content active">
-        <img src="foto/arka1.JPG" alt="Nazay Bahçe Açık Çim Bahçe" class="space-img">
+        <div class="custom-slider">
+          <button class="slider-btn prev-btn" aria-label="Önceki Fotoğraf"><i
+              class="fa-solid fa-chevron-left"></i></button>
+          <div class="slider-images">
+            <img src="foto/arka1.JPG" alt="Nazay Bahçe salıncaklı bahçe köşesi" class="active">
+            <img src="foto/bahce-dogal-1.jpg" alt="Nazay Bahçe yeşillikler arasında davet alanı" loading="lazy">
+            <img src="foto/arka4.JPG" alt="Nazay Bahçe ağaçlar ve çiçek saksıları" loading="lazy">
+            <img src="foto/bahce-dogal-2.jpg" alt="Nazay Bahçe ağaç gölgesinde bahçe" loading="lazy">
+            <img src="foto/arka3.JPG" alt="Nazay Bahçe bar ve bahçe girişi" loading="lazy">
+            <img src="foto/arka6.JPG" alt="Nazay Bahçe hoş geldiniz köşesi" loading="lazy">
+          </div>
+          <button class="slider-btn next-btn" aria-label="Sonraki Fotoğraf"><i
+              class="fa-solid fa-chevron-right"></i></button>
+        </div>
         <div class="space-details">
           <h3>Doğayla İç İçe Bahçe</h3>
-          <p>Yaz ve bahar aylarında yemyeşil çimler üzerinde, Ege ışıkları ve özel aydınlatmalar eşliğinde rüya gibi
-            bir davet alanı.</p>
+          <p>Yemyeşil bahçemiz, açılır kapanır tentesi ve doğalgazlı ısıtma sistemi sayesinde yazın ferah, kışın sıcacık;
+            dört mevsim konforla kullanabileceğiniz rüya gibi bir davet alanı.</p>
           <ul class="space-features-list">
+            <li><i class="fa-solid fa-check"></i> Açılır kapanır tente ile yağmurdan ve güneşten korumalı alan</li>
+            <li><i class="fa-solid fa-check"></i> Doğalgazlı ısıtma sistemi ile kış aylarında da sıcak ve konforlu ortam</li>
             <li><i class="fa-solid fa-check"></i> 100 kişiye kadar oturma düzeni ve bistro masalar</li>
             <li><i class="fa-solid fa-check"></i> Geceye özel büyüleyici romantik ışıklandırmalar</li>
             <li><i class="fa-solid fa-check"></i> Canlı çiçeklerden oluşan bahçe ve rüya gibi fotoğraf alanları</li>
@@ -476,79 +491,170 @@
 
       <div class="gallery-filters">
         <button class="filter-btn active" data-filter="all">Tümü</button>
-        <button class="filter-btn" data-filter="nisan">Nişan & Söz</button>
-        <button class="filter-btn" data-filter="bahce">Açık Bahçe</button>
-        <button class="filter-btn" data-filter="kis">Kış Bahçesi</button>
-        <button class="filter-btn" data-filter="ikram">İkram Masası</button>
+        <button class="filter-btn" data-filter="bride">Bride to Be</button>
+        <button class="filter-btn" data-filter="dogum">Doğum Günü</button>
+        <button class="filter-btn" data-filter="kahvalti">Kahvaltı</button>
+        <button class="filter-btn" data-filter="yemekli">Yemekli</button>
+        <button class="filter-btn" data-filter="kina">Kına</button>
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-item" data-category="bahce">
-          <img src="foto/img-20260712-wa0000.jpg" alt="Nazay Bahçe Giriş & Atmosfer">
+        <div class="gallery-item" data-category="bride">
+          <img src="foto/bride-to-be-fon.jpg" alt="Bride to Be çiçekli karşılama fonu" loading="lazy">
           <div class="gallery-overlay">
             <div class="gallery-info">
-              <h4>Mekan Atmosferi</h4>
-              <p>Doğa ile iç içe huzurlu köşk bahçesi</p>
+              <h4>Bride to Be Karşılama Fonu</h4>
+              <p>Beyaz çiçekler ve isme özel harflerle süslü fon</p>
             </div>
           </div>
         </div>
 
-        <div class="gallery-item" data-category="bahce">
-          <img src="foto/img-20260712-wa0002.jpg" alt="Gece Işıklandırması & Bahçe">
+        <div class="gallery-item" data-category="bride">
+          <img src="foto/bride-to-be-hediyelik.jpg" alt="Bride to Be hediyelik çikolata kutusu" loading="lazy">
           <div class="gallery-overlay">
             <div class="gallery-info">
-              <h4>Büyüleyici Gece Aydınlatması</h4>
-              <p>Ege ışıkları ile romantik akşam davetleri</p>
+              <h4>Zarif Hediyelikler</h4>
+              <p>Altın detaylı kişiye özel hediyelik sunumu</p>
             </div>
           </div>
         </div>
 
-        <div class="gallery-item" data-category="bahce">
-          <img src="foto/img-20260712-wa0003.jpg" alt="Gündüz Davet Masaları">
+        <div class="gallery-item" data-category="bride">
+          <img src="foto/img-20260712-wa0002.jpg" alt="Salıncak ve anı panosu" loading="lazy">
           <div class="gallery-overlay">
             <div class="gallery-info">
-              <h4>Gündüz Masa Düzeni</h4>
+              <h4>Anı Panosu & Salıncak</h4>
+              <p>Fotoğraflarınızla hazırlanan özel anı köşesi</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="dogum">
+          <img src="foto/img-20260712-wa0014.jpg" alt="Doğum günü tatlı ve kurabiye ikramı" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Tatlı & Kurabiye Masası</h4>
+              <p>Kutlamanıza eşlik eden butik tatlı ikramları</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="dogum">
+          <img src="foto/img-20260712-wa0016.jpg" alt="Nazar boncuklu salıncak detayı" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Renkli Kutlama Köşeleri</h4>
+              <p>Fotoğraf çekimi için keyifli bahçe detayları</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="kahvalti">
+          <img src="foto/kahvalti-1.jpg" alt="Serpme köy kahvaltısı masası" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Serpme Kahvaltı</h4>
+              <p>Yeşillikler arasında zengin kahvaltı sofrası</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="kahvalti">
+          <img src="foto/kahvalti-2.jpg" alt="Sucuklu yumurta ve kahvaltılıklar" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Sıcak Kahvaltılıklar</h4>
+              <p>Sahanda sucuklu yumurta, peynirler ve çay</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="kahvalti">
+          <img src="foto/kahvalti-3.jpg" alt="Kahvaltı tabakları yakın çekim" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Taze Lezzetler</h4>
+              <p>Günün en güzel öğününü sevdiklerinizle paylaşın</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="yemekli">
+          <img src="foto/yemekli-mezeler.jpg" alt="Soğuk meze çeşitleri" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Meze Sunumu</h4>
+              <p>Ev yapımı soğuk mezelerle kurulan sofralar</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="yemekli">
+          <img src="foto/img-20260712-wa0003.jpg" alt="Dolma ve pilav servisi" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Yemek Servisi</h4>
+              <p>Sıcak yemeklerle zengin davet menüsü</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="yemekli">
+          <img src="foto/img-20260712-wa0023.jpg" alt="Uzun davet masaları" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Davet Masa Düzeni</h4>
               <p>Şık konsept masalar ve bahçe şıklığı</p>
             </div>
           </div>
         </div>
 
-        <div class="gallery-item" data-category="kis">
-          <img src="foto/img-20260712-wa0012.jpg" alt="Tenteli Kapalı Bahçe">
+        <div class="gallery-item" data-category="yemekli">
+          <img src="foto/yemekli-aksam.jpg" alt="Akşam yemeği tabağı ve ışıklar" loading="lazy">
           <div class="gallery-overlay">
             <div class="gallery-info">
-              <h4>Açılır Kapanır Tente Alanı</h4>
-              <p>4 mevsim hava şartlarından korumalı davet alanı</p>
+              <h4>Akşam Yemeği</h4>
+              <p>Işıklar altında keyifli akşam yemekleri</p>
             </div>
           </div>
         </div>
 
-        <div class="gallery-item" data-category="nisan">
-          <img src="foto/img-20260712-wa0014.jpg" alt="Nişan & Söz Dekorasyonu">
+        <div class="gallery-item" data-category="yemekli">
+          <img src="foto/img-20260712-wa0000.jpg" alt="Mumlu uzun masa düzeni" loading="lazy">
           <div class="gallery-overlay">
             <div class="gallery-info">
-              <h4>Özel Nişan & Söz Fonu</h4>
-              <p>Canlı çiçekler ve kişiye özel nişan tagı</p>
+              <h4>Zarif Masa Detayları</h4>
+              <p>Kristal mumluklar ve canlı çiçekler</p>
             </div>
           </div>
         </div>
 
-        <div class="gallery-item" data-category="ikram">
-          <img src="foto/img-20260712-wa0016.jpg" alt="Butik İkram Büfesi">
+        <div class="gallery-item" data-category="yemekli">
+          <img src="foto/yemekli-salon.jpg" alt="Tenteli alanda yemekli davet düzeni" loading="lazy">
           <div class="gallery-overlay">
             <div class="gallery-info">
-              <h4>Özel İkram Sunumu</h4>
-              <p>Zarif detaylarla hazırlanan kokteyl masası</p>
+              <h4>Tenteli Yemek Alanı</h4>
+              <p>4 mevsim korumalı yemekli davet düzeni</p>
             </div>
           </div>
         </div>
 
-        <div class="gallery-item" data-category="nisan">
-          <img src="foto/img-20260712-wa0023.jpg" alt="Kişiye Özel Konsept">
+        <div class="gallery-item" data-category="kina">
+          <img src="foto/kina-mum-hediyelik.jpg" alt="Kına gecesi mum hediyelikler ve kırmızı gül" loading="lazy">
           <div class="gallery-overlay">
             <div class="gallery-info">
-              <h4>Unutulmaz Davet Detayları</h4>
-              <p>Kişiselleştirilmiş süsleme ve şık aksesuarlar</p>
+              <h4>Kına Hediyelikleri</h4>
+              <p>Kırmızı tül ve gül detaylı mum hediyelikler</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="kina">
+          <img src="foto/img-20260712-wa0012.jpg" alt="Mumlarla süslenmiş kına fonu" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h4>Kına Gecesi Fonu</h4>
+              <p>Mum ışıkları ve çiçeklerle romantik sahne</p>
             </div>
           </div>
         </div>
