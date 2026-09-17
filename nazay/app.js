@@ -345,7 +345,7 @@ function initQuoteForm() {
     status.innerHTML = mesaj + (ekHtml || '');
   }
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const data = {
@@ -370,34 +370,18 @@ function initQuoteForm() {
       return;
     }
 
-    submit.disabled = true;
-    durum(NazayLang.t('ui.sending') || 'Gönderiliyor...', 'pending');
-
-    try {
-      const res = await fetch('/api/translation-quotes', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-
-      durum(NazayLang.t('ui.success') || 'Talebiniz alındı. En kısa sürede size dönüş yapacağız.', 'success');
-      track('quote_submitted', { doc_type: data.docType, urgency: data.urgency });
-      form.reset();
-    } catch (err) {
-      // Sunucuya ulaşılamadıysa kullanıcı boşta kalmasın: WhatsApp'a yönlendir
-      console.error('Teklif gönderilemedi:', err);
-      durum(
-        NazayLang.t('ui.error') || 'Gönderilemedi. Lütfen WhatsApp veya telefon üzerinden bize ulaşın.',
-        'error',
-        ` <a href="${whatsappYedegi(data)}" target="_blank" rel="noopener" class="qf-status-link">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp
-          </a>`
-      );
-      track('quote_failed');
-    } finally {
-      submit.disabled = false;
-    }
+    // Talep doğrudan WhatsApp mesajı olarak hazırlanır (sunucu/e-posta kullanılmaz).
+    // window.open, tıklama anında çağrılmalı; araya await girerse tarayıcı açılır pencereyi engeller.
+    const waUrl = whatsappYedegi(data);
+    window.open(waUrl, '_blank', 'noopener');
+    durum(
+      NazayLang.t('ui.waOpened') || 'WhatsApp açıldı. Hazırlanan mesajı göndermeniz yeterli.',
+      'success',
+      ` <a href="${waUrl}" target="_blank" rel="noopener" class="qf-status-link">
+          <i class="fa-brands fa-whatsapp"></i> ${NazayLang.t('ui.waOpenAgain') || 'Açılmadıysa tıklayın'}
+        </a>`
+    );
+    track('quote_whatsapp', { doc_type: data.docType, urgency: data.urgency });
   });
 }
 

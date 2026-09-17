@@ -145,7 +145,7 @@ const NAZAY_I18N = {
     'quote.notes': 'Notunuz',
     'quote.notesPh': 'Belgeniz veya işleminiz hakkında eklemek istedikleriniz...',
     'quote.consent': 'Kişisel verilerimin <a href="kvkk.html" target="_blank">KVKK Aydınlatma Metni</a> kapsamında işlenmesini kabul ediyorum.',
-    'quote.submit': 'Teklif Talebini Gönder',
+    'quote.submit': 'WhatsApp ile Teklif İste',
     'quote.infoTitle': 'Fiyat Neye Göre Belirlenir?',
     'quote.f1': 'Kaynak ve hedef dil çifti',
     'quote.f2': 'Belgenin sayfa ve karakter sayısı',
@@ -228,6 +228,8 @@ const NAZAY_I18N = {
 
     /* Çalışma anında JavaScript tarafından kullanılan metinler */
     'ui.sending': 'Gönderiliyor...',
+    'ui.waOpened': 'WhatsApp açıldı. Hazırlanan mesajı göndermeniz yeterli.',
+    'ui.waOpenAgain': 'Açılmadıysa tıklayın',
     'ui.success': 'Talebiniz alındı. En kısa sürede size dönüş yapacağız.',
     'ui.error': 'Gönderilemedi. Lütfen WhatsApp veya telefon üzerinden bize ulaşın.',
     'ui.errRequired': 'Lütfen ad soyad ve telefon alanlarını doldurun.',
@@ -365,7 +367,7 @@ const NAZAY_I18N = {
     'quote.notes': 'Your Note',
     'quote.notesPh': 'Anything you would like to add about your document or procedure...',
     'quote.consent': 'I consent to the processing of my personal data under the <a href="kvkk.html" target="_blank">Privacy Notice</a>.',
-    'quote.submit': 'Send Quote Request',
+    'quote.submit': 'Request a Quote via WhatsApp',
     'quote.infoTitle': 'What Determines the Price?',
     'quote.f1': 'The source and target language pair',
     'quote.f2': 'The number of pages and characters',
@@ -447,6 +449,8 @@ const NAZAY_I18N = {
     'mobilebar.directions': 'Directions',
 
     'ui.sending': 'Sending...',
+    'ui.waOpened': 'WhatsApp has opened. Just send the prepared message.',
+    'ui.waOpenAgain': 'Click here if it did not open',
     'ui.success': 'We have received your request and will get back to you shortly.',
     'ui.error': 'Could not send. Please reach us via WhatsApp or by phone.',
     'ui.errRequired': 'Please fill in your name and phone number.',
@@ -584,7 +588,7 @@ const NAZAY_I18N = {
     'quote.notes': 'ملاحظاتك',
     'quote.notesPh': 'أي معلومات إضافية عن وثيقتك أو معاملتك...',
     'quote.consent': 'أوافق على معالجة بياناتي الشخصية وفقاً <a href="kvkk.html" target="_blank">لسياسة الخصوصية</a>.',
-    'quote.submit': 'إرسال طلب العرض',
+    'quote.submit': 'اطلب عرض سعر عبر واتساب',
     'quote.infoTitle': 'ما الذي يحدد السعر؟',
     'quote.f1': 'الزوج اللغوي (اللغة المصدر والهدف)',
     'quote.f2': 'عدد صفحات وأحرف الوثيقة',
@@ -666,6 +670,8 @@ const NAZAY_I18N = {
     'mobilebar.directions': 'الاتجاهات',
 
     'ui.sending': 'جارٍ الإرسال...',
+    'ui.waOpened': 'تم فتح واتساب. يكفي أن ترسلوا الرسالة المُعدّة.',
+    'ui.waOpenAgain': 'اضغطوا هنا إذا لم يُفتح',
     'ui.success': 'تم استلام طلبكم وسنعاود التواصل معكم في أقرب وقت.',
     'ui.error': 'تعذّر الإرسال. يرجى التواصل معنا عبر واتساب أو الهاتف.',
     'ui.errRequired': 'يرجى تعبئة الاسم ورقم الهاتف.',

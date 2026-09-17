@@ -171,17 +171,6 @@ Müsaitlik durumunuz ve detaylı bilgi için dönüş yapmanızı rica ederim.`;
       const encodedMessage = encodeURIComponent(messageText);
       const whatsappUrl = `https://wa.me/905416109897?text=${encodedMessage}`;
 
-      // Save to database via backend API
-      fetch('/api/inquiries', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          eventType, guestCount, cateringPref, eventDate, clientName, clientPhone, clientNotes: notes
-        })
-      }).catch(err => console.error("Error saving inquiry:", err));
-
       // Open WhatsApp in new tab
       window.open(whatsappUrl, '_blank');
     });
