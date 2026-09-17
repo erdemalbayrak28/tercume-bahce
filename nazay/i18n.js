@@ -21,7 +21,7 @@ const NAZAY_I18N = {
     'meta.title': 'Nazay Tercüme | Yeminli Tercüme Dil Hizmetleri Ltd.Şti. – Üsküdar/İstanbul',
     'meta.description': 'Nazay Yeminli Tercüme Dil Hizmetleri; noter, apostil ve konsolosluk işlemleri için tüm dünya dillerinde profesyonel ve hızlı çeviri hizmeti sunmaktadır. Üsküdar/İstanbul.',
 
-    'topbar.hours': 'Pazartesi – Cumartesi: 09:00 – 21:00',
+    'topbar.hours': '7/24 Açığız',
     'topbar.address': 'Murat Reis, Yeni Ocak Sk. No:39, Üsküdar/İstanbul',
 
     'nav.about': 'Hakkımızda',
@@ -54,7 +54,7 @@ const NAZAY_I18N = {
     'about.v1': 'Noter Onaylı Tercüme',
     'about.v2': 'Apostil İşlemleri',
     'about.v3': 'Konsolosluk Onayları',
-    'about.vs3': 'Hizmet Saatleri',
+    'about.vs3': 'Açığız',
     'about.tag': 'Hakkımızda',
     'about.title': 'Nazay Yeminli Tercüme<br><span class="accent">Dil Hizmetleri</span>',
     'about.p1': 'Nazay Yeminli Tercüme Dil Hizmetleri olarak, her türlü tercüme edilecek evraklarınızın; <strong>noter, apostil ve konsolosluk işlemleri</strong> için hizmet vermekteyiz.',
@@ -64,8 +64,8 @@ const NAZAY_I18N = {
     'about.h1d': 'Yasal geçerliliği olan noter ve apostil onaylı belgeler',
     'about.h2t': 'Tüm Dünya Dilleri',
     'about.h2d': "50'den fazla dil çiftinde uzman yeminli tercümanlar",
-    'about.h3t': '09:00 – 21:00 Hizmet',
-    'about.h3d': 'Uzun çalışma saatleriyle her zaman yanınızdayız',
+    'about.h3t': '7/24 Açığız',
+    'about.h3d': 'Hafta sonu ve bayramlar dahil, gece gündüz yanınızdayız',
     'about.cta': 'Bizimle İletişime Geçin',
 
     'services.tag': 'Hizmetlerimiz',
@@ -206,8 +206,8 @@ const NAZAY_I18N = {
     'contact.email': 'E-posta',
     'contact.emailCta': 'Belge Gönderin',
     'contact.hours': 'Çalışma Saatleri',
-    'contact.hoursVal': 'Pzt – Cmt: 09:00 – 21:00',
-    'contact.hoursCta': 'Hizmet Saatleri',
+    'contact.hoursVal': '7/24 Açığız',
+    'contact.hoursCta': 'Her Gün, Her Saat',
     'contact.address': 'Adres',
     'contact.addressCta': 'Yol Tarifi Al',
 
@@ -241,7 +241,7 @@ const NAZAY_I18N = {
     'meta.title': 'Nazay Translation | Sworn & Notarised Translation Services – Üsküdar/Istanbul',
     'meta.description': 'Nazay Sworn Translation Services provides fast, professional translation in all world languages for notary, apostille and consulate procedures. Üsküdar/Istanbul.',
 
-    'topbar.hours': 'Monday – Saturday: 09:00 – 21:00',
+    'topbar.hours': 'Open 24/7',
     'topbar.address': 'Murat Reis, Yeni Ocak St. No:39, Üsküdar/Istanbul',
 
     'nav.about': 'About Us',
@@ -274,7 +274,7 @@ const NAZAY_I18N = {
     'about.v1': 'Notarized Translation',
     'about.v2': 'Apostille Services',
     'about.v3': 'Consulate Legalization',
-    'about.vs3': 'Service Hours',
+    'about.vs3': 'Open',
     'about.tag': 'About Us',
     'about.title': 'Nazay Sworn Translation<br><span class="accent">Language Services</span>',
     'about.p1': 'At Nazay Sworn Translation Language Services, we handle every kind of document you need translated for <strong>notary, apostille and consulate procedures</strong>.',
@@ -284,8 +284,8 @@ const NAZAY_I18N = {
     'about.h1d': 'Legally valid notary- and apostille-certified documents',
     'about.h2t': 'All World Languages',
     'about.h2d': 'Expert sworn translators in more than 50 language pairs',
-    'about.h3t': 'Open 09:00 – 21:00',
-    'about.h3d': 'Long working hours mean we are always available',
+    'about.h3t': 'Open 24/7',
+    'about.h3d': 'Day and night, weekends and holidays included, we are here for you',
     'about.cta': 'Get in Touch',
 
     'services.tag': 'Our Services',
@@ -426,8 +426,8 @@ const NAZAY_I18N = {
     'contact.email': 'E-mail',
     'contact.emailCta': 'Send Your Document',
     'contact.hours': 'Working Hours',
-    'contact.hoursVal': 'Mon – Sat: 09:00 – 21:00',
-    'contact.hoursCta': 'Service Hours',
+    'contact.hoursVal': 'Open 24/7',
+    'contact.hoursCta': 'Every Day, Every Hour',
     'contact.address': 'Address',
     'contact.addressCta': 'Get Directions',
 
@@ -460,7 +460,7 @@ const NAZAY_I18N = {
     'meta.title': 'نازاي للترجمة | خدمات الترجمة المحلفة والموثقة – أسكودار/إسطنبول',
     'meta.description': 'تقدم نازاي لخدمات الترجمة المحلفة ترجمة سريعة واحترافية بجميع لغات العالم لمعاملات كاتب العدل والأبوستيل والقنصليات. أسكودار/إسطنبول.',
 
-    'topbar.hours': 'الاثنين – السبت: 09:00 – 21:00',
+    'topbar.hours': 'مفتوح 24/7',
     'topbar.address': 'مراد ريس، شارع يني أوجاق رقم 39، أسكودار/إسطنبول',
 
     'nav.about': 'من نحن',
@@ -493,7 +493,7 @@ const NAZAY_I18N = {
     'about.v1': 'ترجمة موثقة لدى الكاتب العدل',
     'about.v2': 'خدمات الأبوستيل',
     'about.v3': 'تصديقات القنصلية',
-    'about.vs3': 'ساعات العمل',
+    'about.vs3': 'مفتوح',
     'about.tag': 'من نحن',
     'about.title': 'نازاي للترجمة المحلفة<br><span class="accent">وخدمات اللغات</span>',
     'about.p1': 'نحن في نازاي لخدمات الترجمة المحلفة نتولى ترجمة جميع أنواع وثائقكم من أجل <strong>معاملات كاتب العدل والأبوستيل والقنصليات</strong>.',
@@ -503,8 +503,8 @@ const NAZAY_I18N = {
     'about.h1d': 'مستندات مصدّقة من كاتب العدل والأبوستيل وذات صلاحية قانونية',
     'about.h2t': 'جميع لغات العالم',
     'about.h2d': 'مترجمون محلفون متخصصون في أكثر من 50 زوجاً لغوياً',
-    'about.h3t': 'خدمة من 09:00 حتى 21:00',
-    'about.h3d': 'ساعات عمل طويلة تجعلنا دائماً إلى جانبكم',
+    'about.h3t': 'مفتوح 24/7',
+    'about.h3d': 'ليلاً ونهاراً، بما في ذلك عطلات نهاية الأسبوع والأعياد، نحن إلى جانبكم',
     'about.cta': 'تواصل معنا',
 
     'services.tag': 'خدماتنا',
@@ -645,8 +645,8 @@ const NAZAY_I18N = {
     'contact.email': 'البريد الإلكتروني',
     'contact.emailCta': 'أرسل وثيقتك',
     'contact.hours': 'ساعات العمل',
-    'contact.hoursVal': 'الاثنين – السبت: 09:00 – 21:00',
-    'contact.hoursCta': 'أوقات الخدمة',
+    'contact.hoursVal': 'مفتوح 24/7',
+    'contact.hoursCta': 'كل يوم، في كل ساعة',
     'contact.address': 'العنوان',
     'contact.addressCta': 'احصل على الاتجاهات',
 
