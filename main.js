@@ -38,7 +38,7 @@ const LandingPage = `
           <span class="panel-veil"></span>
           <span class="panel-body">
             <span class="panel-logo">
-              <img src="assets/logo-tercume.jpg" alt="Nazay Yeminli Tercüme logosu" width="440" height="344">
+              <img src="assets/logo-tercume-yeni.png" alt="Nazay Yeminli Tercüme logosu" width="481" height="440">
             </span>
             <h1>Nazay Tercüme</h1>
             <p>Profesyonel ve güvenilir dil hizmetleri</p>

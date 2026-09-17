@@ -253,7 +253,7 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
 }
 
 .logo-img {
-  height: 54px;
+  height: 62px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -613,7 +613,7 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
 }
 
 .about-logo-img {
-  height: 120px;
+  height: 150px;
   width: auto;
   object-fit: contain;
   background: rgba(255,255,255,0.92);
@@ -1196,7 +1196,7 @@ blockquote.review-text::before { content: open-quote; color: var(--blue-accent);
 }
 
 .footer-logo-img {
-  height: 60px;
+  height: 72px;
   width: auto;
   object-fit: contain;
   background: rgba(255,255,255,0.92);
