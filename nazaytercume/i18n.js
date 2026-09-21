@@ -44,7 +44,7 @@ const NAZAY_I18N = {
     'trust.2': 'Hızlı Teslimat',
     'trust.3': 'Noter Onaylı',
     'trust.4': 'Tüm Dünya Dilleri',
-    'trust.5': 'Google 4.4/5 Yıldız',
+    'trust.5': 'Google 4.5/5 Yıldız',
 
     'about.visualTitle': 'Yeminli Tercüme Bürosu',
     'about.visualDesc': 'Tüm resmi evraklarınız için yasal geçerliliği olan çeviriler',
@@ -266,7 +266,7 @@ const NAZAY_I18N = {
     'trust.2': 'Fast Delivery',
     'trust.3': 'Notary Approved',
     'trust.4': 'All World Languages',
-    'trust.5': 'Google 4.4/5 Stars',
+    'trust.5': 'Google 4.5/5 Stars',
 
     'about.visualTitle': 'Sworn Translation Office',
     'about.visualDesc': 'Legally valid translations for all your official documents',
@@ -487,7 +487,7 @@ const NAZAY_I18N = {
     'trust.2': 'تسليم سريع',
     'trust.3': 'مصدّقة من كاتب العدل',
     'trust.4': 'جميع لغات العالم',
-    'trust.5': 'تقييم جوجل 4.4/5',
+    'trust.5': 'تقييم جوجل 4.5/5',
 
     'about.visualTitle': 'مكتب ترجمة محلفة',
     'about.visualDesc': 'ترجمات ذات صلاحية قانونية لجميع وثائقكم الرسمية',
