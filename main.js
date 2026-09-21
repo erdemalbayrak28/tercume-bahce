@@ -17,7 +17,7 @@ const LandingPage = `
 
       <div class="landing-panels">
 
-        <a class="panel panel-bahce" href="./nazay-bahce/index.html" aria-label="Nazay Bahçe sitesine git">
+        <a class="panel panel-bahce" href="./nazaybahce/" aria-label="Nazay Bahçe sitesine git">
           <span class="panel-media"></span>
           <span class="panel-veil"></span>
           <span class="panel-body">
@@ -33,7 +33,7 @@ const LandingPage = `
           </span>
         </a>
 
-        <a class="panel panel-tercume" href="./nazay/index.html" aria-label="Nazay Tercüme sitesine git">
+        <a class="panel panel-tercume" href="./nazaytercume/" aria-label="Nazay Tercüme sitesine git">
           <span class="panel-media"></span>
           <span class="panel-veil"></span>
           <span class="panel-body">

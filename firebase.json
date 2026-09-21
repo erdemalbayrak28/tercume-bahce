@@ -11,10 +11,22 @@
       "package.json",
       "package-lock.json",
       "README.md",
-      "nazay-bahce/foto/DSC0*",
-      "nazay-bahce/foto/NAZ0*",
-      "nazay-bahce/foto/IMG-2025*",
-      "nazay-bahce/foto/WhatsApp Image*"
+      "nazaybahce/foto/DSC0*",
+      "nazaybahce/foto/NAZ0*",
+      "nazaybahce/foto/IMG-2025*",
+      "nazaybahce/foto/WhatsApp Image*"
+    ],
+    "redirects": [
+      { "source": "/nazaybahce", "destination": "/nazaybahce/", "type": 301 },
+      { "source": "/nazaytercume", "destination": "/nazaytercume/", "type": 301 },
+      { "source": "/nazay-bahce", "destination": "/nazaybahce/", "type": 301 },
+      { "source": "/nazay-bahce/index.html", "destination": "/nazaybahce/", "type": 301 },
+      { "source": "/nazay-bahce/:path*", "destination": "/nazaybahce/:path*", "type": 301 },
+      { "source": "/nazay", "destination": "/nazaytercume/", "type": 301 },
+      { "source": "/nazay/index.html", "destination": "/nazaytercume/", "type": 301 },
+      { "source": "/nazay/:path*", "destination": "/nazaytercume/:path*", "type": 301 },
+      { "source": "/nazaybahce/index.html", "destination": "/nazaybahce/", "type": 301 },
+      { "source": "/nazaytercume/index.html", "destination": "/nazaytercume/", "type": 301 }
     ],
     "rewrites": [
       {

@@ -32,8 +32,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api', api);
 
 // Statik dosyalar (canlıda bu işi Firebase Hosting'in CDN'i yapar):
-//   /nazay/index.html        -> Nazay Tercüme
-//   /nazay-bahce/index.html  -> Nazay Bahçe
+//   /nazaytercume/        -> Nazay Tercüme
+//   /nazaybahce/  -> Nazay Bahçe
 app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
