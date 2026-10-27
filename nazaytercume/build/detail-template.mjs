@@ -15,7 +15,7 @@ const HARITA = 'https://www.google.com/maps/dir/?api=1&destination=Murat+Reis+Ma
 
 const FA_CDN = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
 const FA_SRI = 'sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==';
-const SURUM  = '20261027';
+const SURUM  = '20261027b';
 
 const KACIS = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
 const kacir = (s) => String(s).replace(/[&<>"]/g, (c) => KACIS[c]);

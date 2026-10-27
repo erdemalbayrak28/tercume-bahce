@@ -243,6 +243,13 @@ npm run build         # en/, ar/ ve hizmetler/ sayfalarini yeniden uretir
 npm run check:links   # site ici kirik baglanti denetimi
 ```
 
+**Önemli:** `config.js`, `app.js`, `i18n.js` veya `styles.css` içeriğini değiştirdiğinizde
+bu dosyalara verilen `?v=` sürüm damgasını da ilerletin. Firebase Hosting `.js` ve `.css`
+dosyalarını 24 saat önbelleğe alır; damga değişmezse mevcut ziyaretçiler yeni HTML ile
+eski betiği birlikte çalıştırır. Damga üç yerde geçer:
+`nazaytercume/index.html`, `nazaytercume/kvkk.html` ve `build/detail-template.mjs`
+içindeki `SURUM` sabiti — sonuncusunu değiştirdikten sonra `npm run build` çalıştırın.
+
 Yeni bir belge sayfası eklemek için `build/content/` altına bir `.mjs` dosyası koyup
 `npm run build` çalıştırmak yeterlidir; `sitemap.xml` elle güncellenir.
 
