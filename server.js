@@ -25,8 +25,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Belge ekleri JSON gövdesinde base64 olarak taşındığı için varsayılan
+// 100 kb sınırı yetersiz kalır. Üst sınır functions/api.js ile aynı olmalı.
+app.use(express.json({ limit: '12mb' }));
+app.use(express.urlencoded({ extended: true, limit: '12mb' }));
 
 // Form uç noktaları — Firebase'deki yönlendirmeyle aynı yol
 app.use('/api', api);
@@ -38,6 +40,12 @@ app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Bulunamayan sayfalar için 404.html — canlıda bu işi Firebase Hosting
+// kendiliğinden yapar; yerelde de aynı davranışı görebilmek için eklendi.
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(__dirname, '404.html'));
 });
 
 app.listen(port, () => {

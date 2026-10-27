@@ -12,6 +12,7 @@
 
 'use strict';
 
+/* I18N_DATA_START — build/build-pages.mjs bu iki işaret arasını okur. Silmeyin. */
 const NAZAY_I18N = {
 
   /* ==========================================================
@@ -36,7 +37,7 @@ const NAZAY_I18N = {
     'hero.subtitle': 'Noter, apostil ve konsolosluk işlemleriniz için hızlı, güvenilir ve şeffaf çeviri çözümleri.',
     'hero.stat1': 'Dil Çifti',
     'hero.stat2': 'Hızlı Teslimat',
-    'hero.stat3': 'Müşteri Memnuniyeti',
+    'hero.stat3': 'Google Puanı',
     'hero.cta1': 'Hemen İletişime Geçin',
     'hero.cta2': 'Ücretsiz Fiyat Teklifi',
 
@@ -82,6 +83,7 @@ const NAZAY_I18N = {
     'services.s5t': 'Tüm Dünya Dillerinde Hizmet',
     'services.s5d': "İngilizce, Almanca, Fransızca, Arapça, Rusça, Farsça, İspanyolca ve 50'den fazla dil çiftinde yeminli tercümanlık hizmeti.",
     'services.link': 'Bilgi Al',
+    'services.detail': 'Detaylı Bilgi',
     'services.linkLang': 'Dilinizi Sorun',
 
     'lang.en': 'İngilizce',
@@ -103,7 +105,13 @@ const NAZAY_I18N = {
     'docs.d3t': 'Vekaletname & Sözleşme Çevirisi',
     'docs.d3d': 'Hukuki işlemler ve uluslararası ticari sözleşmeler için',
     'docs.d4t': 'Diğer Belgeleriniz',
-    'docs.d4d': 'Doğum belgesi, sabıka kaydı, evlilik cüzdanı, bilanço, patent, sağlık raporu ve fazlası.',
+    'docs.d4d': 'Bilanço, patent, sağlık raporu, ehliyet, askerlik belgesi ve fazlası.',
+    'docs.d5t': 'Doğum Belgesi Çevirisi',
+    'docs.d5d': 'Vatandaşlık, okul kaydı ve nüfus işlemleri için',
+    'docs.d6t': 'Evlilik Cüzdanı Çevirisi',
+    'docs.d6d': 'Aile birleşimi ve oturum izni başvuruları için',
+    'docs.d7t': 'Sabıka Kaydı Çevirisi',
+    'docs.d7d': 'Vize, oturum izni ve yurt dışı iş başvuruları için',
     'docs.more': 'Detaylı Bilgi',
     'docs.ask': 'Belgenizi Sorun',
 
@@ -146,6 +154,11 @@ const NAZAY_I18N = {
     'quote.notesPh': 'Belgeniz veya işleminiz hakkında eklemek istedikleriniz...',
     'quote.consent': 'Kişisel verilerimin <a href="kvkk.html" target="_blank">KVKK Aydınlatma Metni</a> kapsamında işlenmesini kabul ediyorum.',
     'quote.submit': 'WhatsApp ile Teklif İste',
+    'quote.submitServer': 'Teklif Talebi Gönder',
+    'quote.file': 'Belge (fotoğraf veya PDF)',
+    'quote.fileHint': 'En fazla 5 dosya, dosya başına 10 MB. Belgeniz yalnızca teklif hazırlamak için kullanılır.',
+    'quote.waFallback': "WhatsApp'ta aç",
+    'quote.mailFallback': 'E-posta ile gönder',
     'quote.infoTitle': 'Fiyat Neye Göre Belirlenir?',
     'quote.f1': 'Kaynak ve hedef dil çifti',
     'quote.f2': 'Belgenin sayfa ve karakter sayısı',
@@ -170,6 +183,8 @@ const NAZAY_I18N = {
     'reviews.onGoogle': "Google'da",
     'reviews.seeAll': 'Tüm yorumları gör',
     'reviews.verified': 'Doğrulanmış Google Yorumu',
+    'reviews.r1': '"Yıllardır Nazay tercüme ile çalışıyorum, profesyonel çeviri ekibiyle işimi kaliteli ve hızlı bir şekilde teslim ettikleri için, Nazay Hanım\'ın ve ekibinin sıcaklığına teşekkür ederim."',
+    'reviews.r2': '"Hem ikili iletişimde hem de işe yaklaşımlarında gerçek profesyoneller, ihtiyaca yönelik doğrudan, hızlı, güvenilir ve şeffaf bir ilişki. Oldukça memnunum."',
     'reviews.ctaTitle': 'Hızlı Hizmet<br>Almak İster misiniz?',
     'reviews.ctaDesc': 'Belgenizi gönderin, dakikalar içinde size dönelim.',
     'reviews.ctaBtn': 'Hemen Arayın',
@@ -218,6 +233,7 @@ const NAZAY_I18N = {
     'footer.groupHome': 'Grup Ana Sayfası',
     'footer.garden': 'Nazay Bahçe – Davet & Organizasyon',
     'footer.kvkk': 'KVKK & Gizlilik Politikası',
+    'footer.local': 'Üsküdar Yeminli Tercüme',
     'footer.rights': 'Tüm Hakları Saklıdır.',
     'footer.tagline': 'Yeminli Tercüme Bürosu – Üsküdar / İstanbul',
 
@@ -233,7 +249,11 @@ const NAZAY_I18N = {
     'ui.success': 'Talebiniz alındı. En kısa sürede size dönüş yapacağız.',
     'ui.error': 'Gönderilemedi. Lütfen WhatsApp veya telefon üzerinden bize ulaşın.',
     'ui.errRequired': 'Lütfen ad soyad ve telefon alanlarını doldurun.',
-    'ui.errConsent': 'Devam etmek için KVKK metnini onaylamanız gerekiyor.'
+    'ui.errConsent': 'Devam etmek için KVKK metnini onaylamanız gerekiyor.',
+    'ui.errFileCount': 'En fazla 5 dosya yükleyebilirsiniz.',
+    'ui.errFileSize': 'Belgelerin toplam boyutu çok büyük. Daha az sayfa gönderin veya WhatsApp kullanın.',
+    'ui.errFileRead': 'Belgeler okunamadı. Lütfen WhatsApp üzerinden gönderin.',
+    'ui.skip': 'İçeriğe geç'
   },
 
   /* ==========================================================
@@ -258,7 +278,7 @@ const NAZAY_I18N = {
     'hero.subtitle': 'Fast, reliable and transparent translation solutions for your notary, apostille and consulate procedures.',
     'hero.stat1': 'Language Pairs',
     'hero.stat2': 'Fast Delivery',
-    'hero.stat3': 'Client Satisfaction',
+    'hero.stat3': 'Google Rating',
     'hero.cta1': 'Contact Us Now',
     'hero.cta2': 'Free Price Quote',
 
@@ -304,6 +324,7 @@ const NAZAY_I18N = {
     'services.s5t': 'Service in All World Languages',
     'services.s5d': 'Sworn translation in English, German, French, Arabic, Russian, Persian, Spanish and more than 50 language pairs.',
     'services.link': 'Learn More',
+    'services.detail': 'Learn More',
     'services.linkLang': 'Ask About Your Language',
 
     'lang.en': 'English',
@@ -325,7 +346,13 @@ const NAZAY_I18N = {
     'docs.d3t': 'Power of Attorney & Contract Translation',
     'docs.d3d': 'For legal procedures and international commercial contracts',
     'docs.d4t': 'Your Other Documents',
-    'docs.d4d': 'Birth certificates, criminal records, marriage certificates, balance sheets, patents, medical reports and more.',
+    'docs.d4d': 'Balance sheets, patents, medical reports, driving licences, military service records and more.',
+    'docs.d5t': 'Birth Certificate Translation',
+    'docs.d5d': 'For citizenship, school enrolment and civil registry procedures',
+    'docs.d6t': 'Marriage Certificate Translation',
+    'docs.d6d': 'For family reunification and residence permit applications',
+    'docs.d7t': 'Criminal Record Translation',
+    'docs.d7d': 'For visa, residence permit and overseas job applications',
     'docs.more': 'Details',
     'docs.ask': 'Ask About Your Document',
 
@@ -368,6 +395,11 @@ const NAZAY_I18N = {
     'quote.notesPh': 'Anything you would like to add about your document or procedure...',
     'quote.consent': 'I consent to the processing of my personal data under the <a href="kvkk.html" target="_blank">Privacy Notice</a>.',
     'quote.submit': 'Request a Quote via WhatsApp',
+    'quote.submitServer': 'Send Quote Request',
+    'quote.file': 'Document (photo or PDF)',
+    'quote.fileHint': 'Up to 5 files, 10 MB each. Your document is used only to prepare the quote.',
+    'quote.waFallback': 'Open in WhatsApp',
+    'quote.mailFallback': 'Send by e-mail',
     'quote.infoTitle': 'What Determines the Price?',
     'quote.f1': 'The source and target language pair',
     'quote.f2': 'The number of pages and characters',
@@ -391,7 +423,9 @@ const NAZAY_I18N = {
     'reviews.title': 'What Our Clients<br><span class="accent">Say About Us</span>',
     'reviews.onGoogle': 'On Google',
     'reviews.seeAll': 'See all reviews',
-    'reviews.verified': 'Verified Google Review',
+    'reviews.verified': 'Verified Google Review (translated)',
+    'reviews.r1': '"I have worked with Nazay Translation for years. They deliver my work quickly and to a high standard with their professional translation team — my thanks to Ms. Nazay and her team for their warmth."',
+    'reviews.r2': '"Genuine professionals both in personal communication and in their approach to the work: direct, fast, reliable and transparent, exactly as needed. I am very satisfied."',
     'reviews.ctaTitle': 'Would You Like<br>Fast Service?',
     'reviews.ctaDesc': 'Send us your document and we will get back to you within minutes.',
     'reviews.ctaBtn': 'Call Now',
@@ -440,6 +474,7 @@ const NAZAY_I18N = {
     'footer.groupHome': 'Group Home Page',
     'footer.garden': 'Nazay Bahçe – Events & Organisation',
     'footer.kvkk': 'Privacy Policy',
+    'footer.local': 'Sworn Translation in Üsküdar',
     'footer.rights': 'All Rights Reserved.',
     'footer.tagline': 'Sworn Translation Office – Üsküdar / Istanbul',
 
@@ -454,7 +489,11 @@ const NAZAY_I18N = {
     'ui.success': 'We have received your request and will get back to you shortly.',
     'ui.error': 'Could not send. Please reach us via WhatsApp or by phone.',
     'ui.errRequired': 'Please fill in your name and phone number.',
-    'ui.errConsent': 'You need to accept the privacy notice to continue.'
+    'ui.errConsent': 'You need to accept the privacy notice to continue.',
+    'ui.errFileCount': 'You can upload at most 5 files.',
+    'ui.errFileSize': 'The documents are too large in total. Send fewer pages or use WhatsApp.',
+    'ui.errFileRead': 'The documents could not be read. Please send them over WhatsApp.',
+    'ui.skip': 'Skip to content'
   },
 
   /* ==========================================================
@@ -479,7 +518,7 @@ const NAZAY_I18N = {
     'hero.subtitle': 'حلول ترجمة سريعة وموثوقة وشفافة لمعاملات كاتب العدل والأبوستيل والقنصليات.',
     'hero.stat1': 'زوج لغوي',
     'hero.stat2': 'تسليم سريع',
-    'hero.stat3': 'رضا العملاء',
+    'hero.stat3': 'تقييم جوجل',
     'hero.cta1': 'تواصل معنا الآن',
     'hero.cta2': 'عرض سعر مجاني',
 
@@ -525,6 +564,7 @@ const NAZAY_I18N = {
     'services.s5t': 'خدمة بجميع لغات العالم',
     'services.s5d': 'خدمة ترجمة محلفة بالإنجليزية والألمانية والفرنسية والعربية والروسية والفارسية والإسبانية وأكثر من 50 زوجاً لغوياً.',
     'services.link': 'اعرف المزيد',
+    'services.detail': 'تفاصيل أكثر',
     'services.linkLang': 'اسأل عن لغتك',
 
     'lang.en': 'الإنجليزية',
@@ -546,7 +586,13 @@ const NAZAY_I18N = {
     'docs.d3t': 'ترجمة الوكالات والعقود',
     'docs.d3d': 'للمعاملات القانونية والعقود التجارية الدولية',
     'docs.d4t': 'وثائقكم الأخرى',
-    'docs.d4d': 'شهادة الميلاد، السجل العدلي، عقد الزواج، الميزانية، براءات الاختراع، التقارير الطبية وغيرها.',
+    'docs.d4d': 'الميزانيات، براءات الاختراع، التقارير الطبية، رخص القيادة، وثائق الخدمة العسكرية وغيرها.',
+    'docs.d5t': 'ترجمة شهادة الميلاد',
+    'docs.d5d': 'لمعاملات الجنسية والتسجيل المدرسي والسجل المدني',
+    'docs.d6t': 'ترجمة عقد الزواج',
+    'docs.d6d': 'لطلبات لم شمل الأسرة وتصريح الإقامة',
+    'docs.d7t': 'ترجمة السجل العدلي',
+    'docs.d7d': 'لطلبات التأشيرة والإقامة والعمل في الخارج',
     'docs.more': 'تفاصيل',
     'docs.ask': 'اسأل عن وثيقتك',
 
@@ -589,6 +635,11 @@ const NAZAY_I18N = {
     'quote.notesPh': 'أي معلومات إضافية عن وثيقتك أو معاملتك...',
     'quote.consent': 'أوافق على معالجة بياناتي الشخصية وفقاً <a href="kvkk.html" target="_blank">لسياسة الخصوصية</a>.',
     'quote.submit': 'اطلب عرض سعر عبر واتساب',
+    'quote.submitServer': 'إرسال طلب عرض السعر',
+    'quote.file': 'الوثيقة (صورة أو PDF)',
+    'quote.fileHint': 'حتى 5 ملفات، 10 ميغابايت لكل ملف. تُستخدم وثيقتكم لإعداد عرض السعر فقط.',
+    'quote.waFallback': 'افتح في واتساب',
+    'quote.mailFallback': 'أرسل بالبريد الإلكتروني',
     'quote.infoTitle': 'ما الذي يحدد السعر؟',
     'quote.f1': 'الزوج اللغوي (اللغة المصدر والهدف)',
     'quote.f2': 'عدد صفحات وأحرف الوثيقة',
@@ -612,7 +663,9 @@ const NAZAY_I18N = {
     'reviews.title': 'ما يقوله<br><span class="accent">عملاؤنا عنا</span>',
     'reviews.onGoogle': 'على جوجل',
     'reviews.seeAll': 'عرض جميع التقييمات',
-    'reviews.verified': 'تقييم جوجل موثّق',
+    'reviews.verified': 'تقييم جوجل موثّق (مترجم)',
+    'reviews.r1': '«أتعامل مع نازاي للترجمة منذ سنوات. يسلّمون عملي بسرعة وبجودة عالية بفضل فريق الترجمة المحترف لديهم، وأشكر السيدة نازاي وفريقها على دفء التعامل.»',
+    'reviews.r2': '«محترفون حقيقيون في التواصل الشخصي وفي أسلوب العمل على حد سواء: مباشرون وسريعون وموثوقون وشفافون تمامًا كما يجب. أنا راضٍ جدًا.»',
     'reviews.ctaTitle': 'هل ترغب في<br>خدمة سريعة؟',
     'reviews.ctaDesc': 'أرسل وثيقتك وسنعاود الاتصال بك خلال دقائق.',
     'reviews.ctaBtn': 'اتصل الآن',
@@ -661,6 +714,7 @@ const NAZAY_I18N = {
     'footer.groupHome': 'الصفحة الرئيسية للمجموعة',
     'footer.garden': 'حديقة نازاي – المناسبات والحفلات',
     'footer.kvkk': 'سياسة الخصوصية',
+    'footer.local': 'ترجمة محلفة في أسكودار',
     'footer.rights': 'جميع الحقوق محفوظة.',
     'footer.tagline': 'مكتب ترجمة محلفة – أسكودار / إسطنبول',
 
@@ -675,30 +729,34 @@ const NAZAY_I18N = {
     'ui.success': 'تم استلام طلبكم وسنعاود التواصل معكم في أقرب وقت.',
     'ui.error': 'تعذّر الإرسال. يرجى التواصل معنا عبر واتساب أو الهاتف.',
     'ui.errRequired': 'يرجى تعبئة الاسم ورقم الهاتف.',
-    'ui.errConsent': 'يجب الموافقة على سياسة الخصوصية للمتابعة.'
+    'ui.errConsent': 'يجب الموافقة على سياسة الخصوصية للمتابعة.',
+    'ui.errFileCount': 'يمكنكم تحميل 5 ملفات كحد أقصى.',
+    'ui.errFileSize': 'الحجم الإجمالي للوثائق كبير جدًا. أرسلوا صفحات أقل أو استخدموا واتساب.',
+    'ui.errFileRead': 'تعذّر قراءة الوثائق. يرجى إرسالها عبر واتساب.',
+    'ui.skip': 'الانتقال إلى المحتوى'
   }
 };
+/* I18N_DATA_END */
 
 /* ============================================================
    Dil motoru
    ============================================================ */
 const NazayLang = (function () {
-  const STORAGE_KEY = 'nazay-lang';
-  const SUPPORTED   = ['tr', 'en', 'ar'];
-  const RTL         = ['ar'];
+  const SUPPORTED = ['tr', 'en', 'ar'];
+  const RTL       = ['ar'];
 
   let current = 'tr';
 
-  /** Kayıtlı tercih → URL parametresi → tarayıcı dili → tr */
+  /**
+   * Sayfanın dili HTML'de bildirilir (<html lang="...">).
+   * Her dil ayrı bir URL'dir (/, /en/, /ar/); bu yüzden tarayıcı dili veya
+   * kayıtlı tercihe göre otomatik yönlendirme YAPILMAZ. Otomatik yönlendirme
+   * hem arama motorlarının üç sürümü ayrı indekslemesini bozar hem de
+   * kullanıcının seçtiği dili elinden alır.
+   */
   function detect() {
-    const fromUrl = new URLSearchParams(window.location.search).get('lang');
-    if (fromUrl && SUPPORTED.includes(fromUrl)) return fromUrl;
-
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved && SUPPORTED.includes(saved)) return saved;
-
-    const browser = (navigator.language || 'tr').slice(0, 2).toLowerCase();
-    return SUPPORTED.includes(browser) ? browser : 'tr';
+    const declared = (document.documentElement.getAttribute('lang') || '').slice(0, 2).toLowerCase();
+    return SUPPORTED.includes(declared) ? declared : 'tr';
   }
 
   function t(key, lang) {
@@ -745,40 +803,95 @@ const NazayLang = (function () {
     const descTag = document.querySelector('meta[name="description"]');
     if (desc && descTag) descTag.setAttribute('content', desc);
 
-    // Seçici etiketi
+    // Seçici etiketi ve hangi dilin açık olduğu
     const label = document.getElementById('lang-current-label');
     if (label) label.textContent = lang.toUpperCase();
 
-    localStorage.setItem(STORAGE_KEY, lang);
+    document.querySelectorAll('#lang-menu [data-lang]').forEach(item => {
+      if (item.getAttribute('data-lang') === lang) {
+        item.setAttribute('aria-current', 'true');
+      } else {
+        item.removeAttribute('aria-current');
+      }
+    });
+
     document.dispatchEvent(new CustomEvent('nazay:langchange', { detail: { lang } }));
   }
 
-  function init() {
-    apply(detect());
-
+  /**
+   * Dil menüsü — WAI-ARIA menü düzeni.
+   * Öğeler gerçek bağlantıdır; klavyeyle ok tuşları, Home/End ve Escape çalışır.
+   */
+  function initSwitcher() {
     const switcher = document.getElementById('lang-switcher');
     const toggle   = document.getElementById('lang-current');
     const menu     = document.getElementById('lang-menu');
     if (!switcher || !toggle || !menu) return;
 
-    toggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const open = switcher.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-    });
+    const items = [...menu.querySelectorAll('[role="menuitem"]')];
 
-    menu.querySelectorAll('[data-lang]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        apply(btn.getAttribute('data-lang'));
-        switcher.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
-    });
+    function ac(odakla) {
+      switcher.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+      if (odakla) items[0]?.focus();
+    }
 
-    document.addEventListener('click', () => {
+    function kapat(odakToggle) {
       switcher.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
+      if (odakToggle) toggle.focus();
+    }
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (switcher.classList.contains('open')) kapat(false); else ac(false);
     });
+
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        ac(true);
+      }
+    });
+
+    menu.addEventListener('keydown', (e) => {
+      const i = items.indexOf(document.activeElement);
+
+      switch (e.key) {
+        case 'ArrowDown':
+          e.preventDefault();
+          items[(i + 1) % items.length]?.focus();
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          items[(i - 1 + items.length) % items.length]?.focus();
+          break;
+        case 'Home':
+          e.preventDefault();
+          items[0]?.focus();
+          break;
+        case 'End':
+          e.preventDefault();
+          items[items.length - 1]?.focus();
+          break;
+        case 'Escape':
+          e.preventDefault();
+          kapat(true);
+          break;
+        case 'Tab':
+          kapat(false);
+          break;
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!switcher.contains(e.target)) kapat(false);
+    });
+  }
+
+  function init() {
+    apply(detect());
+    initSwitcher();
   }
 
   return {

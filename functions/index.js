@@ -25,8 +25,11 @@ const SMTP_USER = defineSecret('SMTP_USER');
 const SMTP_PASS = defineSecret('SMTP_PASS');
 
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Belge ekleri JSON gövdesinde base64 olarak taşınır; varsayılan 100 kb
+// sınırı yetersizdir. Üst sınır functions/api.js'teki MAX_TOTAL_BYTES ile
+// uyumlu tutulmalıdır (base64 yaklaşık %33 şişirir).
+app.use(express.json({ limit: '12mb' }));
+app.use(express.urlencoded({ extended: true, limit: '12mb' }));
 
 // Hosting yönlendirmesi yolu koruduğu için router /api altına bağlanır
 app.use('/api', api);
@@ -35,7 +38,7 @@ exports.api = onRequest(
     {
         region: 'europe-west1',      // Türkiye'ye en yakın bölgelerden
         secrets: [SMTP_USER, SMTP_PASS],
-        memory: '256MiB',
+        memory: '512MiB',      // base64 belge ekleri bellekte çözülür
         timeoutSeconds: 30,
         maxInstances: 10,            // beklenmedik trafikte maliyet tavanı
         cors: false                  // aynı alan adından geldiği için gerekmiyor

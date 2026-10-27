@@ -4,7 +4,9 @@
   "description": "Nazay Business Group — Nazay Bahce ve Nazay Tercume web siteleri ve backend",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "node nazaytercume/build/build-pages.mjs && node nazaytercume/build/build-detail-pages.mjs",
+    "check:links": "node nazaytercume/build/check-links.mjs"
   },
   "dependencies": {
     "cors": "^2.8.5",

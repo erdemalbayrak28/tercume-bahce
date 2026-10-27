@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sayfa Bulunamadı | Nazay Business Group</title>
+  <meta name="description" content="Aradığınız sayfa bulunamadı. Nazay Tercüme ve Nazay Bahçe sayfalarına buradan ulaşabilirsiniz.">
+  <!-- Hata sayfası indekslenmemeli -->
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#CC0000">
+
+  <link rel="icon" type="image/svg+xml" href="/nazaytercume/assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #000000;
+      --red: #CC0000;
+      --red-light: #FF0000;
+      --text: #111111;
+      --muted: #555555;
+      --silver: #E0E0E0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: linear-gradient(135deg, #000000 0%, #111111 45%, #8B0000 100%);
+    }
+
+    .card {
+      width: min(640px, 100%);
+      background: #ffffff;
+      border-radius: 20px;
+      padding: clamp(28px, 5vw, 52px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      text-align: center;
+    }
+
+    .code {
+      display: inline-block;
+      font-size: clamp(3rem, 12vw, 5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, var(--red) 0%, var(--red-light) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    h1 { font-size: clamp(1.25rem, 4vw, 1.6rem); margin: 10px 0 12px; }
+    p  { color: var(--muted); margin-bottom: 26px; }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 24px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--red) 0%, var(--red-light) 100%);
+      color: #ffffff;
+      box-shadow: 0 8px 24px rgba(204, 0, 0, 0.3);
+    }
+
+    .btn-ghost { border: 1.5px solid var(--silver); color: var(--text); }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn:focus-visible {
+      outline: 3px solid var(--red-light);
+      outline-offset: 3px;
+    }
+
+    .contact {
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--silver);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact a { color: var(--red); font-weight: 600; text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn { transition: none; }
+      .btn:hover { transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <span class="code">404</span>
+    <h1>Aradığınız sayfa bulunamadı</h1>
+    <p>
+      Bağlantı taşınmış veya adres yanlış yazılmış olabilir. Aşağıdaki sayfalardan devam edebilirsiniz.
+    </p>
+
+    <div class="links">
+      <a class="btn btn-primary" href="/nazaytercume/">Nazay Tercüme</a>
+      <a class="btn btn-ghost" href="/nazaybahce/">Nazay Bahçe</a>
+      <a class="btn btn-ghost" href="/">Ana Sayfa</a>
+    </div>
+
+    <div class="contact">
+      Belge çevirisi için doğrudan ulaşın:
+      <a href="tel:+905436439897">0543 643 98 97</a> ·
+      <a href="https://wa.me/905436439897" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </main>
+</body>
+
+</html>

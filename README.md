@@ -49,25 +49,38 @@ soğuk başlangıç ve maliyet düşük kalır.
 
 ### Form akışı
 
-Formlar şu an **sunucuya gitmez**: istemci tarafında yapılandırılmış bir WhatsApp mesajına
-dönüştürülüp `wa.me` üzerinden açılır. Böylece e-posta teslim riski ve spam yükü ortadan kalkar.
-API uç noktaları hazır durur ve istenirse devreye alınabilir.
+Tercüme teklif formunun iki çalışma kipi vardır; hangisinin geçerli olduğunu
+`nazaytercume/config.js` içindeki `formEndpoint` belirler:
+
+- **Dolu** → talep JSON olarak sunucuya gider, Postgres'e yazılır ve e-posta ile bildirilir.
+  Belge ekleri de aynı istekte taşınır: istemci görseli küçültüp base64'e çevirir, sunucu
+  nodemailer ekine dönüştürür. Böylece multipart ayrıştırıcı bağımlılığı eklenmez.
+- **Boş** → istemci tarafında hazırlanmış bir WhatsApp mesajına dönüşür. Bağlantının `href`'i
+  form doldukça güncellendiği için tıklama normal bir bağlantı tıklamasıdır; açılır pencere
+  engelleyicisine takılmaz.
+
+Sunucu yolu başarısız olursa kullanıcı sessizce kaybedilmez; hata mesajıyla birlikte hazır
+WhatsApp bağlantısı gösterilir.
 
 ```mermaid
 sequenceDiagram
     participant K as Kullanici
     participant S as Site - app.js
-    participant W as WhatsApp
-    participant A as /api - opsiyonel
+    participant A as /api/translation-quotes
     participant E as E-posta + Postgres
+    participant W as WhatsApp
 
-    K->>S: Formu doldurur
-    S->>S: Alanlari dogrular
-    S->>W: wa.me deep link + hazir mesaj
-    W-->>K: Mesaj ekrani acilir, kullanici gonderir
-    Note over A,E: Alternatif yol - su an istemciden cagrilmiyor
-    S-->>A: POST /api/inquiries
-    A-->>E: Bildirim maili + kayit
+    K->>S: Formu doldurur, belge ekler
+    S->>S: Alanlari dogrular, gorseli kucultur
+    alt formEndpoint tanimli
+        S->>A: POST JSON + base64 ekler
+        A->>A: Tur, sayi, boyut yeniden dogrulanir
+        A-->>E: Bildirim maili + ek + kayit
+        A-->>S: 200 OK
+    else uc nokta yok veya hata
+        S->>W: wa.me deep link + hazir mesaj
+        W-->>K: Mesaj ekrani acilir
+    end
 ```
 
 ---
@@ -126,12 +139,20 @@ sequenceDiagram
 │   ├── styles.css
 │   └── foto/             # Galeri görselleri + tanıtım videosu
 │
-├── nazaytercume/         # Tercüme sitesi
-│   ├── index.html        # 1238 satır — hizmetler, süreç, teklif formu
-│   ├── app.js            # Dil değiştirici, yüzen WhatsApp, teklif formu, GA4 olayları
-│   ├── i18n.js           # TR / EN / AR sözlükleri
+├── nazaytercume/         # Tercüme sitesi (Türkçe kaynak)
+│   ├── index.html        # Hizmetler, süreç, teklif formu — EN/AR sürümlerinin kaynağı
+│   ├── config.js         # Tek ayar dosyası: GA4 kimliği, form uç noktası, yükleme sınırları
+│   ├── app.js            # GA4 yükleyici, teklif formu, SSS, mobil menü, scroll spy
+│   ├── i18n.js           # TR / EN / AR sözlükleri + dil motoru
 │   ├── styles.css
-│   ├── hizmetler/        # Hizmet detay sayfaları (diploma, pasaport, vekaletname)
+│   ├── en/, ar/          # ÜRETİLMİŞ dil sayfaları — elle düzenlenmez
+│   ├── hizmetler/        # ÜRETİLMİŞ hizmet ve belge sayfaları — elle düzenlenmez
+│   ├── build/            # Sayfa üreteçleri ve bağlantı denetimi
+│   │   ├── build-pages.mjs         # index.html + i18n.js -> en/, ar/
+│   │   ├── build-detail-pages.mjs  # content/*.mjs -> hizmetler/*.html
+│   │   ├── detail-template.mjs     # Alt sayfa şablonu (head, menü, alt bilgi)
+│   │   ├── content/                # Alt sayfa içerikleri — DÜZENLENECEK YER
+│   │   └── check-links.mjs         # Site içi kırık bağlantı denetimi
 │   └── kvkk.html         # KVKK aydınlatma metni
 │
 ├── functions/            # Cloud Functions
@@ -199,15 +220,38 @@ firebase functions:secrets:set SMTP_USER
 | Metot | Yol | Gövde | Ne yapar |
 |---|---|---|---|
 | `POST` | `/api/inquiries` | isim, telefon, tarih, kişi sayısı, mesaj | Bahçe rezervasyon talebi — bildirim maili, `inquiries` tablosuna kayıt |
-| `POST` | `/api/translation-quotes` | isim, iletişim, belge türü, dil çifti, aciliyet | Tercüme teklif talebi — bildirim maili, `translation_quotes` tablosuna kayıt |
+| `POST` | `/api/translation-quotes` | isim, iletişim, belge türü, dil çifti, aciliyet, `documents[]` (base64 ek, en fazla 5 dosya / toplam 8 MB) | Tercüme teklif talebi — bildirim maili + belge ekleri, `translation_quotes` tablosuna kayıt |
 
 Tablolar ilk istekte `CREATE TABLE IF NOT EXISTS` ile oluşturulur.
 
 ---
 
+## Sayfa üretimi
+
+`nazaytercume/en/`, `nazaytercume/ar/` ve `nazaytercume/hizmetler/` altındaki HTML dosyaları
+üretilmiştir; elle düzenlenirse ilk derlemede kaybolur. Kaynaklar:
+
+| Değiştirmek istediğin | Düzenlenecek dosya |
+|---|---|
+| Türkçe ana sayfa metni | `nazaytercume/index.html` |
+| EN / AR çevirileri | `nazaytercume/i18n.js` |
+| Hizmet veya belge sayfası içeriği | `nazaytercume/build/content/<slug>.mjs` |
+| Alt sayfaların ortak başlık/menü/alt bilgisi | `nazaytercume/build/detail-template.mjs` |
+
+```bash
+npm run build         # en/, ar/ ve hizmetler/ sayfalarini yeniden uretir
+npm run check:links   # site ici kirik baglanti denetimi
+```
+
+Yeni bir belge sayfası eklemek için `build/content/` altına bir `.mjs` dosyası koyup
+`npm run build` çalıştırmak yeterlidir; `sitemap.xml` elle güncellenir.
+
+---
+
 ## Bilinen eksikler
 
-- `nazaytercume/index.html` içindeki GA4 ölçüm kimliği hâlâ `G-XXXXXXXXXX` placeholder'ı — gerçek kimlikle değiştirilmeli
-- `nazaybahce` tarafında analitik kurulu değil
-- Formlar yalnızca WhatsApp üzerinden ilerliyor; `/api` uç noktaları yazılmış ama istemciden çağrılmıyor
+- `nazaytercume/config.js` içindeki `gaMeasurementId` boş — gerçek GA4 kimliği girilene kadar ölçüm yapılmaz
+- `nazaybahce` tarafında analitik kurulu değil ve formu hâlâ yalnızca WhatsApp üzerinden ilerliyor
+- Cloud Functions v2 faturalandırma gerektirir; proje Spark planındayken `/api/**` istekleri 503 döner ve form WhatsApp yoluna düşer
+- Hizmet ve belge alt sayfaları yalnızca Türkçe — Türkçe arama niyetini hedefledikleri için EN/AR sürümleri üretilmiyor
 - Galeri görselleri ham boyutta (`.JPG`, birkaç MB) — WebP'ye dönüştürülüp Hosting ignore listesi sadeleştirilebilir

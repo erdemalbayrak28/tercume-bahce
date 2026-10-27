@@ -49,7 +49,7 @@ function escapeHtml(value) {
         .replace(/"/g, '&quot;');
 }
 
-async function sendNotificationMail(subject, fields, replyTo) {
+async function sendNotificationMail(subject, fields, replyTo, attachments) {
     const transporter = getTransporter();
     if (!transporter) {
         console.warn('SMTP tanımlı değil, e-posta gönderilmedi:', subject);
@@ -76,9 +76,66 @@ async function sendNotificationMail(subject, fields, replyTo) {
         to: MAIL_TO(),
         replyTo: replyTo || undefined,
         subject,
-        html
+        html,
+        attachments: attachments && attachments.length ? attachments : undefined
     });
     return true;
+}
+
+/* ============================================================
+   Belge ekleri
+   ------------------------------------------------------------
+   İstemci, taranmış belgeyi küçültüp base64 olarak JSON gövdesinde
+   gönderir; böylece multipart ayrıştırıcı bir bağımlılık eklemeye
+   gerek kalmaz. Gelen veri her zaman düşmanca kabul edilir:
+   tür, sayı ve boyut sunucu tarafında yeniden doğrulanır.
+   ============================================================ */
+const MAX_FILES = 5;
+const MAX_TOTAL_BYTES = 8 * 1024 * 1024;
+const ALLOWED_TYPES = new Set([
+    'image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif', 'application/pdf'
+]);
+const EXT_BY_TYPE = {
+    'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp',
+    'image/heic': 'heic', 'image/heif': 'heif', 'application/pdf': 'pdf'
+};
+
+/** Dosya adından dizin geçişi ve denetim karakterlerini söker. */
+function safeFileName(name, type, index) {
+    const ext = EXT_BY_TYPE[type] || 'bin';
+    const base = String(name || '')
+        .replace(/[\u0000-\u001f]/g, '')
+        .split(/[\\/]/).pop()
+        .replace(/\.[^.]*$/, '')
+        .replace(/[^\p{L}\p{N}._ -]/gu, '')
+        .trim()
+        .slice(0, 60);
+    return `${base || `belge-${index + 1}`}.${ext}`;
+}
+
+/**
+ * JSON gövdesindeki documents alanını nodemailer eklerine çevirir.
+ * Geçersiz girdide hata fırlatır; sessizce yok saymaz.
+ */
+function parseAttachments(documents) {
+    if (documents == null) return [];
+    if (!Array.isArray(documents)) throw new Error('documents bir dizi olmalı');
+    if (documents.length > MAX_FILES) throw new Error(`En fazla ${MAX_FILES} belge gönderilebilir`);
+
+    let total = 0;
+    return documents.map((doc, i) => {
+        const type = String(doc && doc.type || '').toLowerCase();
+        if (!ALLOWED_TYPES.has(type)) throw new Error(`Desteklenmeyen dosya türü: ${type || 'bilinmiyor'}`);
+
+        const b64 = String(doc.dataBase64 || '');
+        if (!/^[A-Za-z0-9+/\r\n]*={0,2}$/.test(b64) || !b64) throw new Error('Belge içeriği geçersiz');
+
+        const content = Buffer.from(b64, 'base64');
+        total += content.length;
+        if (total > MAX_TOTAL_BYTES) throw new Error('Belgelerin toplam boyutu sınırı aşıyor');
+
+        return { filename: safeFileName(doc.name, type, i), content, contentType: type };
+    });
 }
 
 /* ============================================================
@@ -166,10 +223,18 @@ router.post('/inquiries', async (req, res) => {
 router.post('/translation-quotes', async (req, res) => {
     try {
         const { docType, sourceLang, targetLang, pageCount, urgency,
-                notarized, clientName, clientPhone, clientEmail, clientNotes } = req.body || {};
+                notarized, clientName, clientPhone, clientEmail, clientNotes,
+                pageLanguage, documents } = req.body || {};
 
         if (!clientName || !clientPhone) {
             return res.status(400).json({ success: false, error: 'Ad ve telefon zorunludur.' });
+        }
+
+        let attachments;
+        try {
+            attachments = parseAttachments(documents);
+        } catch (err) {
+            return res.status(400).json({ success: false, error: err.message });
         }
 
         await saveToDb(
@@ -190,8 +255,10 @@ router.post('/translation-quotes', async (req, res) => {
             'Sayfa Sayısı': pageCount,
             'Teslim':       urgency,
             'Noter Onayı':  notarized,
+            'Ekli Belge':   attachments.length ? `${attachments.length} dosya` : 'yok',
+            'Form Dili':    pageLanguage || 'tr',
             'Notlar':       clientNotes
-        }, clientEmail);
+        }, clientEmail, attachments);
 
         res.status(200).json({ success: true, message: 'Quote request received' });
     } catch (error) {

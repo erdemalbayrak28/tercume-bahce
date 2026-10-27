@@ -1430,6 +1430,16 @@ blockquote.review-text::before { content: open-quote; color: var(--blue-accent);
   box-shadow: 0 14px 40px rgba(37, 211, 102, 0.55);
 }
 
+/* Giriş animasyonu — eskiden JS inline style ile yapıyordu */
+.floating-wa.is-hidden {
+  opacity: 0;
+  transform: scale(0.7) translateY(10px);
+  pointer-events: none;
+}
+
+/* Mobil menü açıkken gövde kaymasın */
+body.nav-open { overflow: hidden; }
+
 .floating-tooltip {
   position: absolute;
   right: 70px;
@@ -1576,6 +1586,61 @@ blockquote.review-text::before { content: open-quote; color: var(--blue-accent);
 
 
 /* ==========================================================
+   ERİŞİLEBİLİRLİK — Klavye odağı
+   Klavyeyle gezinen kullanıcı her zaman nerede olduğunu görür;
+   fareyle tıklamada odak halkası çıkmaz.
+   ========================================================== */
+:focus-visible {
+  outline: 3px solid var(--blue-light);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* Koyu zeminlerde halka beyaz olmalı, yoksa kırmızı üstüne kırmızı gelir */
+.top-bar :focus-visible,
+.hero :focus-visible,
+.site-footer :focus-visible,
+.review-cta-card :focus-visible,
+.page-hero :focus-visible {
+  outline-color: var(--white);
+}
+
+/* Aktif menü bağlantısı — eskiden JS ile <style> enjekte ediliyordu */
+.nav-link.active-nav {
+  color: var(--blue);
+  background: rgba(204, 0, 0, 0.06);
+}
+.nav-link.active-nav::after { transform: translateX(-50%) scaleX(1); }
+
+
+/* ==========================================================
+   HAREKET AZALTMA TERCİHİ (prefers-reduced-motion)
+   İşletim sisteminde animasyonları kapatan kullanıcı için
+   tüm geçişler ve sonsuz animasyonlar devre dışı kalır.
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  /* Kaydırmayla açılan içerik gizli kalmasın */
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-scroll-indicator,
+  .hero-bg-shapes { display: none; }
+}
+
+
+/* ==========================================================
    DİL SEÇİCİ
    ========================================================== */
 .lang-switcher { position: relative; display: inline-block; }
@@ -1621,7 +1686,7 @@ blockquote.review-text::before { content: open-quote; color: var(--blue-accent);
   visibility: visible;
   transform: translateY(0);
 }
-.lang-menu button {
+.lang-menu a {
   display: block;
   width: 100%;
   text-align: left;
@@ -1631,7 +1696,10 @@ blockquote.review-text::before { content: open-quote; color: var(--blue-accent);
   border-radius: 6px;
   transition: var(--transition);
 }
-.lang-menu button:hover { background: rgba(204, 0, 0, 0.07); color: var(--blue); }
+.lang-menu a:hover,
+.lang-menu a:focus-visible { background: rgba(204, 0, 0, 0.07); color: var(--blue); }
+.lang-menu a[aria-current="true"] { font-weight: 700; color: var(--blue); }
+.rtl .lang-menu a { text-align: right; }
 
 .tb-mail { display: inline-flex; align-items: center; gap: 6px; }
 
@@ -1809,6 +1877,43 @@ blockquote.review-text::before { content: open-quote; color: var(--blue-accent);
 
 .qf-submit { width: 100%; justify-content: center; }
 .qf-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+/* --- Belge yükleme alanı --- */
+.qf-field-file input[type="file"] {
+  width: 100%;
+  padding: 11px 14px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: var(--gray-dark);
+  background: var(--off-white);
+  border: 1.5px dashed var(--silver-mid);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.qf-field-file input[type="file"]:hover { border-color: var(--blue); background: var(--white); }
+.qf-field-file .qf-hint { padding-left: 0; }
+
+/* --- Yedek iletişim bağlantıları --- */
+.qf-fallbacks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  justify-content: center;
+  margin-top: 14px;
+}
+.qf-fallback-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray-dark);
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+}
+.qf-fallback-link:hover,
+.qf-fallback-link:focus-visible { color: var(--blue); border-bottom-color: var(--blue); }
 
 .qf-status {
   margin-top: 16px;

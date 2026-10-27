@@ -13,8 +13,8 @@
 
   <link rel="canonical" href="https://nazay.com.tr/nazaytercume/">
   <link rel="alternate" hreflang="tr" href="https://nazay.com.tr/nazaytercume/">
-  <link rel="alternate" hreflang="en" href="https://nazay.com.tr/nazaytercume/?lang=en">
-  <link rel="alternate" hreflang="ar" href="https://nazay.com.tr/nazaytercume/?lang=ar">
+  <link rel="alternate" hreflang="en" href="https://nazay.com.tr/nazaytercume/en/">
+  <link rel="alternate" hreflang="ar" href="https://nazay.com.tr/nazaytercume/ar/">
   <link rel="alternate" hreflang="x-default" href="https://nazay.com.tr/nazaytercume/">
 
   <!-- Open Graph / Sosyal Medya Önizleme -->
@@ -27,49 +27,58 @@
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:locale:alternate" content="ar_AR">
   <meta property="og:url" content="https://nazay.com.tr/nazaytercume/">
-  <meta property="og:image" content="https://nazay.com.tr/nazaytercume/assets/images/nazay-tercume-logo-kare.jpg">
+  <meta property="og:image" content="https://nazay.com.tr/nazaytercume/assets/images/og-nazay-tercume.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Nazay Yeminli Tercüme Dil Hizmetleri">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nazay Tercüme | Profesyonel Yeminli Tercüme Hizmetleri">
   <meta name="twitter:description"
     content="Noter, apostil ve konsolosluk işlemleriniz için tüm dünya dillerinde yeminli tercüme.">
-  <meta name="twitter:image" content="https://nazay.com.tr/nazaytercume/assets/images/nazay-tercume-logo-kare.jpg">
+  <meta name="twitter:image" content="https://nazay.com.tr/nazaytercume/assets/images/og-nazay-tercume.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="apple-touch-icon" href="assets/images/nazay-tercume-logo-kare.jpg">
 
-  <!-- Google Fonts -->
+  <!--
+    ============================================================
+    SITE AYARLARI — tek dosyada tek yer
+    Ölçüm kimliği ve form uç noktası buradan beslenir; boş
+    bırakıldığında site hatasız çalışır, sadece o özellik kapalı olur.
+    ============================================================
+  -->
+  <script src="config.js?v=20261027"></script>
+
+  <!--
+    GOOGLE SEARCH CONSOLE
+    Tercih edilen doğrulama yöntemi DNS TXT kaydıdır. HTML etiketiyle
+    doğrulayacaksanız Search Console'un verdiği içeriği aşağıya yazıp
+    yorum işaretlerini kaldırın.
+  -->
+  <!-- <meta name="google-site-verification" content="BURAYA_DOGRULAMA_KODU"> -->
+
+  <!-- Google Fonts — yalnızca kullanılan aile ve ağırlıklar -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=20260917c">
+  <link rel="stylesheet" href="styles.css?v=20261027">
 
   <!--
-    ============================================================
-    ANALİTİK — Google Analytics 4
-    DEĞİŞTİR: G-XXXXXXXXXX yerine kendi ölçüm kimliğinizi yazıp
-    aşağıdaki yorum işaretlerini kaldırın. Kimlik girilene kadar
-    site analitiksiz çalışır, hata vermez.
-    ============================================================
+    Font Awesome — render engellemesin diye geç yüklenir.
+    İkonlar dekoratiftir; metin ve düzen ikonlar gelmeden de okunur.
   -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+  </noscript>
 
   <!-- Yapısal Veri: İşletme Bilgisi -->
   <script type="application/ld+json">
@@ -113,12 +122,6 @@
       "name": "İstanbul"
     },
     "knowsLanguage": ["tr", "en", "de", "fr", "ar", "ru", "fa", "es"],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.5",
-      "bestRating": "5",
-      "ratingCount": "15"
-    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Tercüme Hizmetleri",
@@ -126,7 +129,12 @@
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Noter Onaylı Yeminli Tercüme" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Apostil ve Konsolosluk İşlemleri" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Teknik Şartname ve İdari Evrak Çevirisi" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Şahsi Belge Çevirileri" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Şahsi Belge Çevirileri" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diploma ve Transkript Çevirisi" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pasaport ve Kimlik Çevirisi" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Doğum Belgesi Çevirisi" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Evlilik Cüzdanı Çevirisi" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Adli Sicil Kaydı Çevirisi" } }
       ]
     }
   }
@@ -209,7 +217,7 @@
 
 <body>
 
-  <a href="#hero" class="skip-link">İçeriğe geç</a>
+  <a href="#icerik" class="skip-link" data-i18n="ui.skip">İçeriğe geç</a>
 
   <!-- TOP BAR -->
   <div class="top-bar" id="top-bar">
@@ -228,18 +236,24 @@
         <a href="https://www.instagram.com/nazaytercume/" target="_blank" rel="noopener" aria-label="Instagram"><i
             class="fa-brands fa-instagram"></i></a>
 
-        <!-- Dil Seçici -->
+        <!--
+          Dil Seçici — her dil gerçek bir URL'dir (/, /en/, /ar/).
+          Bu sayede arama motorları üç dili de ayrı sayfa olarak indeksler.
+        -->
         <div class="lang-switcher" id="lang-switcher">
-          <button class="lang-current" id="lang-current" aria-haspopup="listbox" aria-expanded="false"
-            aria-label="Dil seçin / Select language">
-            <i class="fa-solid fa-globe"></i>
+          <button class="lang-current" id="lang-current" aria-haspopup="true" aria-expanded="false"
+            aria-controls="lang-menu" aria-label="Dil seçin / Select language / اختر اللغة">
+            <i class="fa-solid fa-globe" aria-hidden="true"></i>
             <span id="lang-current-label">TR</span>
-            <i class="fa-solid fa-chevron-down lang-caret"></i>
+            <i class="fa-solid fa-chevron-down lang-caret" aria-hidden="true"></i>
           </button>
-          <ul class="lang-menu" id="lang-menu" role="listbox">
-            <li><button role="option" data-lang="tr">🇹🇷 Türkçe</button></li>
-            <li><button role="option" data-lang="en">🇬🇧 English</button></li>
-            <li><button role="option" data-lang="ar">🇸🇦 العربية</button></li>
+          <ul class="lang-menu" id="lang-menu" role="menu">
+            <li role="none"><a role="menuitem" href="index.html" hreflang="tr" lang="tr" data-lang="tr"
+                aria-current="true">🇹🇷 Türkçe</a></li>
+            <li role="none"><a role="menuitem" href="en/index.html" hreflang="en" lang="en" data-lang="en">🇬🇧
+                English</a></li>
+            <li role="none"><a role="menuitem" href="ar/index.html" hreflang="ar" lang="ar" data-lang="ar">🇸🇦
+                العربية</a></li>
           </ul>
         </div>
       </div>
@@ -250,7 +264,11 @@
   <header class="site-header" id="site-header">
     <div class="container nav-container">
       <a href="#" class="logo" aria-label="Nazay Tercüme Ana Sayfa">
-        <img src="assets/images/nazay-tercume-logo.png" alt="Nazay Yeminli Tercüme Logo" class="logo-img" width="61" height="56">
+        <picture>
+          <source srcset="assets/images/nazay-tercume-logo.webp" type="image/webp">
+          <img src="assets/images/nazay-tercume-logo.png" alt="Nazay Yeminli Tercüme Logo" class="logo-img"
+            width="481" height="440" fetchpriority="high" decoding="async">
+        </picture>
       </a>
 
       <nav aria-label="Ana Menü">
@@ -277,6 +295,8 @@
       </div>
     </div>
   </header>
+
+  <main id="icerik">
 
   <!-- HERO -->
   <section class="hero" id="hero">
@@ -314,9 +334,10 @@
           <div class="stat-label" data-i18n="hero.stat2">Hızlı Teslimat</div>
         </div>
         <div class="stat-divider"></div>
+        <!-- Doğrulanabilir rakam: Google İşletme Profili puanı -->
         <div class="stat-item">
-          <div class="stat-number">100<span>%</span></div>
-          <div class="stat-label" data-i18n="hero.stat3">Müşteri Memnuniyeti</div>
+          <div class="stat-number" data-static>4.5<span>/5</span></div>
+          <div class="stat-label" data-i18n="hero.stat3">Google Puanı</div>
         </div>
       </div>
 
@@ -363,7 +384,11 @@
         <div class="about-visual">
           <div class="about-visual-main">
             <div class="about-logo-wrap">
-              <img src="assets/images/nazay-tercume-logo.png" alt="Nazay Yeminli Tercüme" class="about-logo-img" loading="lazy">
+              <picture>
+                <source srcset="assets/images/nazay-tercume-logo.webp" type="image/webp">
+                <img src="assets/images/nazay-tercume-logo.png" alt="Nazay Yeminli Tercüme" class="about-logo-img"
+                  width="481" height="440" loading="lazy" decoding="async">
+              </picture>
             </div>
             <h3 data-i18n="about.visualTitle">Yeminli Tercüme Bürosu</h3>
             <p data-i18n="about.visualDesc">Tüm resmi evraklarınız için yasal geçerliliği olan çeviriler</p>
@@ -483,9 +508,8 @@
           <h3 data-i18n="services.s1t">Noter Onaylı Yeminli Tercüme</h3>
           <p data-i18n="services.s1d">Mahkeme, resmi kurum ve kamu idarelerine sunulmak üzere noter tarafından onaylanan
             yeminli tercüme hizmetleri.</p>
-          <a href="https://wa.me/905436439897?text=Merhaba,%20noter%20onaylı%20tercüme%20hakkında%20bilgi%20almak%20istiyorum."
-            target="_blank" rel="noopener" class="service-link" data-track="whatsapp_service"><span
-              data-i18n="services.link">Bilgi Al</span> <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="hizmetler/noter-onayli-tercume.html" class="service-link"><span data-i18n="services.detail">Detaylı
+              Bilgi</span> <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="service-card">
@@ -495,9 +519,8 @@
           <h3 data-i18n="services.s2t">Apostil ve Konsolosluk İşlemleri</h3>
           <p data-i18n="services.s2d">Yurt dışında kullanılacak belgeleriniz için uluslararası geçerliliğe sahip apostil
             tasdiki ve konsolosluk onayı.</p>
-          <a href="https://wa.me/905436439897?text=Merhaba,%20apostil%20işlemleri%20hakkında%20bilgi%20almak%20istiyorum."
-            target="_blank" rel="noopener" class="service-link" data-track="whatsapp_service"><span
-              data-i18n="services.link">Bilgi Al</span> <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="hizmetler/apostil-konsolosluk-onayi.html" class="service-link"><span
+              data-i18n="services.detail">Detaylı Bilgi</span> <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="service-card">
@@ -581,6 +604,27 @@
           <i class="fa-solid fa-file-signature"></i>
           <h3 data-i18n="docs.d3t">Vekaletname &amp; Sözleşme Çevirisi</h3>
           <p data-i18n="docs.d3d">Hukuki işlemler ve uluslararası ticari sözleşmeler için</p>
+          <span class="doctype-link" data-i18n="docs.more">Detaylı Bilgi <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="hizmetler/dogum-belgesi-cevirisi.html" class="doctype-card">
+          <i class="fa-solid fa-baby"></i>
+          <h3 data-i18n="docs.d5t">Doğum Belgesi Çevirisi</h3>
+          <p data-i18n="docs.d5d">Vatandaşlık, okul kaydı ve nüfus işlemleri için</p>
+          <span class="doctype-link" data-i18n="docs.more">Detaylı Bilgi <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="hizmetler/evlilik-cuzdani-cevirisi.html" class="doctype-card">
+          <i class="fa-solid fa-ring"></i>
+          <h3 data-i18n="docs.d6t">Evlilik Cüzdanı Çevirisi</h3>
+          <p data-i18n="docs.d6d">Aile birleşimi ve oturum izni başvuruları için</p>
+          <span class="doctype-link" data-i18n="docs.more">Detaylı Bilgi <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="hizmetler/sabika-kaydi-cevirisi.html" class="doctype-card">
+          <i class="fa-solid fa-file-shield"></i>
+          <h3 data-i18n="docs.d7t">Sabıka Kaydı Çevirisi</h3>
+          <p data-i18n="docs.d7d">Vize, oturum izni ve yurt dışı iş başvuruları için</p>
           <span class="doctype-link" data-i18n="docs.more">Detaylı Bilgi <i class="fa-solid fa-arrow-right"></i></span>
         </a>
 
@@ -749,6 +793,18 @@
               placeholder="Belgeniz veya işleminiz hakkında eklemek istedikleriniz..."></textarea>
           </div>
 
+          <!--
+            Belge yükleme — yalnızca config.js içinde formEndpoint doluysa görünür.
+            Uç nokta tanımlı değilken alan JS tarafından gizlenir, çünkü dosya
+            WhatsApp bağlantısıyla taşınamaz.
+          -->
+          <div class="qf-field qf-field-file" id="qf-file-wrap" hidden>
+            <label for="qf-file" data-i18n="quote.file">Belge (fotoğraf veya PDF)</label>
+            <input type="file" id="qf-file" name="document" accept="image/*,.pdf" multiple>
+            <small class="qf-hint" data-i18n="quote.fileHint">En fazla 5 dosya, dosya başına 10 MB. Belgeniz yalnızca
+              teklif hazırlamak için kullanılır.</small>
+          </div>
+
           <label class="qf-consent">
             <input type="checkbox" id="qf-consent" required>
             <span data-i18n-html="quote.consent">Kişisel verilerimin <a href="kvkk.html" target="_blank">KVKK Aydınlatma
@@ -756,9 +812,27 @@
           </label>
 
           <button type="submit" class="btn btn-primary btn-lg qf-submit" id="qf-submit">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span data-i18n="quote.submit">WhatsApp ile Teklif İste</span>
+            <i class="fa-brands fa-whatsapp" id="qf-submit-icon"></i>
+            <span data-i18n="quote.submit" id="qf-submit-label">WhatsApp ile Teklif İste</span>
           </button>
+
+          <!--
+            Yedek kanallar. WhatsApp bağlantısının href'i form doldukça
+            güncellenir; bu yüzden tıklama normal bir bağlantı tıklamasıdır
+            ve açılır pencere engelleyicilerine yakalanmaz.
+          -->
+          <div class="qf-fallbacks">
+            <a href="https://wa.me/905436439897" target="_blank" rel="noopener" id="qf-wa-link"
+              class="qf-fallback-link" data-track="whatsapp_form_fallback">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span data-i18n="quote.waFallback">WhatsApp'ta aç</span>
+            </a>
+            <a href="mailto:nazayistanbul@gmail.com" id="qf-mail-link" class="qf-fallback-link"
+              data-track="email_form_fallback">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span data-i18n="quote.mailFallback">E-posta ile gönder</span>
+            </a>
+          </div>
 
           <div class="qf-status" id="qf-status" role="status" aria-live="polite"></div>
         </form>
@@ -855,6 +929,13 @@
         </a>
       </div>
 
+      <!--
+        EKLE: Google profilinde 15 yorum var, burada 2 tanesi gösteriliyor.
+        Yeni yorum eklerken aşağıdaki .review-card bloğunu kopyalayın ve
+        metni i18n.js içindeki reviews.rN anahtarlarına da ekleyin.
+        Yalnızca Google profilinde gerçekten bulunan yorumları girin;
+        uydurma yorum hem kullanıcıyı hem Google'ı yanıltır.
+      -->
       <div class="reviews-grid">
 
         <div class="review-card">
@@ -869,7 +950,7 @@
             </div>
             <div class="google-g"><i class="fa-brands fa-google"></i></div>
           </div>
-          <blockquote class="review-text">
+          <blockquote class="review-text" data-i18n="reviews.r1">
             "Yıllardır Nazay tercüme ile çalışıyorum, profesyonel çeviri ekibiyle işimi kaliteli ve hızlı bir şekilde
             teslim ettikleri için, Nazay Hanım'ın ve ekibinin sıcaklığına teşekkür ederim."
           </blockquote>
@@ -889,7 +970,7 @@
             </div>
             <div class="google-g"><i class="fa-brands fa-google"></i></div>
           </div>
-          <blockquote class="review-text">
+          <blockquote class="review-text" data-i18n="reviews.r2">
             "Hem ikili iletişimde hem de işe yaklaşımlarında gerçek profesyoneller, ihtiyaca yönelik doğrudan, hızlı,
             güvenilir ve şeffaf bir ilişki. Oldukça memnunum."
           </blockquote>
@@ -1128,6 +1209,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-top">
@@ -1135,7 +1218,11 @@
 
         <div class="footer-brand">
           <div class="footer-logo-row">
-            <img src="assets/images/nazay-tercume-logo.png" alt="Nazay Yeminli Tercüme Logo" class="footer-logo-img" loading="lazy">
+            <picture>
+              <source srcset="assets/images/nazay-tercume-logo.webp" type="image/webp">
+              <img src="assets/images/nazay-tercume-logo.png" alt="Nazay Yeminli Tercüme Logo" class="footer-logo-img"
+                width="481" height="440" loading="lazy" decoding="async">
+            </picture>
           </div>
           <p class="footer-desc" data-i18n="footer.desc">
             Tüm dünya dillerinde noter, apostil ve konsolosluk işlemleri için profesyonel ve yeminli tercüme hizmetleri.
@@ -1158,12 +1245,16 @@
         <div class="footer-col">
           <h4 class="footer-col-title" data-i18n="footer.servicesTitle">Hizmetlerimiz</h4>
           <ul class="footer-links">
-            <li><a href="#hizmetlerimiz" data-i18n="services.s1t">Noter Onaylı Yeminli Tercüme</a></li>
-            <li><a href="#hizmetlerimiz" data-i18n="services.s2t">Apostil ve Konsolosluk İşlemleri</a></li>
+            <li><a href="hizmetler/noter-onayli-tercume.html" data-i18n="services.s1t">Noter Onaylı Yeminli
+                Tercüme</a></li>
+            <li><a href="hizmetler/apostil-konsolosluk-onayi.html" data-i18n="services.s2t">Apostil ve Konsolosluk
+                İşlemleri</a></li>
             <li><a href="hizmetler/diploma-cevirisi.html" data-i18n="docs.d1t">Diploma &amp; Transkript Çevirisi</a></li>
             <li><a href="hizmetler/pasaport-cevirisi.html" data-i18n="docs.d2t">Pasaport &amp; Kimlik Çevirisi</a></li>
             <li><a href="hizmetler/vekaletname-cevirisi.html" data-i18n="docs.d3t">Vekaletname &amp; Sözleşme
                 Çevirisi</a></li>
+            <li><a href="hizmetler/uskudar-yeminli-tercume.html" data-i18n="footer.local">Üsküdar Yeminli Tercüme</a>
+            </li>
           </ul>
         </div>
 
@@ -1231,8 +1322,8 @@
     </a>
   </nav>
 
-  <script src="i18n.js?v=20260921"></script>
-  <script src="app.js?v=20260917c"></script>
+  <script src="i18n.js?v=20261027"></script>
+  <script src="app.js?v=20261027"></script>
 </body>
 
 </html>

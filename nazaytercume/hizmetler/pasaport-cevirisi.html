@@ -1,71 +1,150 @@
 <!DOCTYPE html>
+<!--
+  BU DOSYA ÜRETİLMİŞTİR — ELLE DÜZENLEMEYİN.
+  İçerik: build/content/pasaport-cevirisi.mjs
+  Şablon: build/detail-template.mjs
+  Yeniden üretmek için: node build/build-detail-pages.mjs
+-->
 <html lang="tr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pasaport ve Kimlik Çevirisi | Yeminli &amp; Noter Onaylı – Nazay Tercüme</title>
-  <meta name="description"
-    content="Pasaport, kimlik, ikametgâh ve nüfus kayıt örneği için yeminli tercüme ve noter onayı. Vize, oturum izni ve konsolosluk başvuruları için Üsküdar/İstanbul.">
+  <meta name="description" content="Pasaport, kimlik, nüfus kayıt örneği ve ikametgâh belgesi için yeminli tercüme, noter onayı ve apostil. Vize ve oturum izni başvuruları için Üsküdar/İstanbul.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#CC0000">
   <link rel="canonical" href="https://nazay.com.tr/nazaytercume/hizmetler/pasaport-cevirisi.html">
 
+  <meta property="og:site_name" content="Nazay Tercüme">
   <meta property="og:title" content="Pasaport ve Kimlik Çevirisi | Nazay Tercüme">
-  <meta property="og:description"
-    content="Vize, oturum izni ve konsolosluk başvurularınız için yeminli, noter onaylı pasaport ve kimlik çevirisi.">
+  <meta property="og:description" content="Pasaport, kimlik, nüfus kayıt örneği ve ikametgâh belgesi için yeminli tercüme, noter onayı ve apostil. Vize ve oturum izni başvuruları için Üsküdar/İstanbul.">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="tr_TR">
   <meta property="og:url" content="https://nazay.com.tr/nazaytercume/hizmetler/pasaport-cevirisi.html">
-  <meta property="og:image" content="https://nazay.com.tr/nazaytercume/assets/images/nazay-tercume-logo-kare.jpg">
+  <meta property="og:image" content="https://nazay.com.tr/nazaytercume/assets/images/og-nazay-tercume.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Nazay Yeminli Tercüme Dil Hizmetleri">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pasaport ve Kimlik Çevirisi | Nazay Tercüme">
+  <meta name="twitter:description" content="Pasaport, kimlik, nüfus kayıt örneği ve ikametgâh belgesi için yeminli tercüme, noter onayı ve apostil. Vize ve oturum izni başvuruları için Üsküdar/İstanbul.">
+  <meta name="twitter:image" content="https://nazay.com.tr/nazaytercume/assets/images/og-nazay-tercume.jpg">
 
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="apple-touch-icon" href="../assets/images/nazay-tercume-logo-kare.jpg">
 
+  <script src="../config.js?v=20261027"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../styles.css?v=20260917c">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css?v=20261027">
+
+  <!-- Font Awesome render engellemesin diye geç yüklenir -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous"
+      referrerpolicy="no-referrer">
+  </noscript>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Pasaport ve Kimlik Çevirisi",
-    "name": "Yeminli Pasaport ve Kimlik Belgesi Çevirisi",
-    "description": "Vize, oturum izni ve konsolosluk başvuruları için yeminli, noter onaylı pasaport, kimlik ve nüfus kayıt örneği çevirisi.",
-    "provider": {
-      "@type": "ProfessionalService",
-      "@id": "https://nazay.com.tr/#organization",
-      "name": "Nazay Yeminli Tercüme Dil Hizmetleri Ltd. Şti.",
-      "telephone": "+905436439897",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Murat Reis Mah. Yeni Ocak Sk. No:39",
-        "addressLocality": "Üsküdar",
-        "addressRegion": "İstanbul",
-        "postalCode": "34664",
-        "addressCountry": "TR"
-      }
-    },
-    "areaServed": { "@type": "City", "name": "İstanbul" },
-    "availableLanguage": ["Türkçe", "İngilizce", "Almanca", "Fransızca", "Arapça", "Rusça"]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Pasaport ve Kimlik Belgesi Çevirisi",
+  "name": "Yeminli Pasaport ve Kimlik Çevirisi",
+  "description": "Vize, oturum izni ve konsolosluk başvuruları için yeminli, noter onaylı pasaport, kimlik ve nüfus belgesi çevirisi.",
+  "url": "https://nazay.com.tr/nazaytercume/hizmetler/pasaport-cevirisi.html",
+  "provider": {
+    "@type": "ProfessionalService",
+    "@id": "https://nazay.com.tr/#organization",
+    "name": "Nazay Yeminli Tercüme Dil Hizmetleri Ltd. Şti.",
+    "telephone": "+905436439897",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Murat Reis Mah. Yeni Ocak Sk. No:39",
+      "addressLocality": "Üsküdar",
+      "addressRegion": "İstanbul",
+      "postalCode": "34664",
+      "addressCountry": "TR"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "İstanbul"
+  },
+  "availableLanguage": [
+    "Türkçe",
+    "İngilizce",
+    "Almanca",
+    "Fransızca",
+    "Arapça",
+    "Rusça"
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://nazay.com.tr/nazaytercume/" },
-      { "@type": "ListItem", "position": 2, "name": "Hizmetler", "item": "https://nazay.com.tr/nazaytercume/#hizmetlerimiz" },
-      { "@type": "ListItem", "position": 3, "name": "Pasaport ve Kimlik Çevirisi" }
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://nazay.com.tr/nazaytercume/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hizmetler",
+      "item": "https://nazay.com.tr/nazaytercume/#hizmetlerimiz"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Pasaport Çevirisi"
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pasaportun tamamı mı çevrilmeli?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Çoğu başvuruda yalnızca fotoğraflı kimlik sayfası yeterlidir. Ancak seyahat geçmişinizin belgelenmesi\n                isteniyorsa vize ve giriş-çıkış damgası taşıyan sayfaların da çevrilmesi gerekir. Kurumun talebini\n                bize iletirseniz gereksiz sayfa ücretinden kaçınırsınız."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nüfus kayıt örneğine apostil gerekir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Belge yurt dışında bir resmî kurumda kullanılacaksa ve ilgili ülke Lahey Sözleşmesi'ne taraf ise\n                apostil gerekir. Taraf olmayan ülkelerde bunun yerine konsolosluk onayı alınır. Hangi ülkeye\n                başvurduğunuzu belirtmeniz hâlinde doğru yolu birlikte belirleriz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yabancı uyrukluyum, belgelerim Türkçeye çevrilebilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Arapça, Rusça, Farsça, İngilizce ve diğer dillerdeki pasaport, kimlik ve nüfus belgelerinizi\n                Türkçeye yeminli olarak çeviriyoruz. Bu çeviriler oturum izni, çalışma izni ve evlilik işlemlerinde\n                kullanılabilir."
+      }
+    }
+  ]
+}
   </script>
 </head>
 
@@ -76,23 +155,28 @@
   <header class="site-header scrolled" id="site-header">
     <div class="container nav-container">
       <a href="../index.html" class="logo" aria-label="Nazay Tercüme Ana Sayfa">
-        <img src="../assets/images/nazay-tercume-logo.png" alt="Nazay Yeminli Tercüme Logo" class="logo-img">
+        <picture>
+          <source srcset="../assets/images/nazay-tercume-logo.webp" type="image/webp">
+          <img src="../assets/images/nazay-tercume-logo.png" alt="Nazay Yeminli Tercüme Logo" class="logo-img"
+            width="481" height="440" fetchpriority="high" decoding="async">
+        </picture>
       </a>
       <nav aria-label="Ana Menü">
         <ul class="nav-links" id="nav-links">
           <li><a href="../index.html#hakkimizda" class="nav-link">Hakkımızda</a></li>
           <li><a href="../index.html#hizmetlerimiz" class="nav-link">Hizmetler</a></li>
+          <li><a href="../index.html#belgeler" class="nav-link">Belgeler</a></li>
           <li><a href="../index.html#sss" class="nav-link">S.S.S.</a></li>
           <li><a href="../index.html#iletisim" class="nav-link">İletişim</a></li>
         </ul>
       </nav>
       <div class="header-actions">
         <a href="../index.html#teklif" class="btn btn-primary header-quote" data-track="quote_header">
-          <i class="fa-solid fa-file-signature"></i> <span>Teklif Al</span>
+          <i class="fa-solid fa-file-signature" aria-hidden="true"></i> <span>Teklif Al</span>
         </a>
-        <a href="https://wa.me/905436439897?text=Merhaba,%20pasaport%20çevirisi%20hakkında%20bilgi%20almak%20istiyorum."
-          target="_blank" rel="noopener" class="btn btn-whatsapp" data-track="whatsapp_header">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        <a href="https://wa.me/905436439897?text=Merhaba%2C%20pasaport%20%C3%A7evirisi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp"
+          data-track="whatsapp_header">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
         </a>
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -105,9 +189,9 @@
     <div class="container">
       <nav class="breadcrumb" aria-label="Sayfa yolu">
         <a href="../index.html">Ana Sayfa</a>
-        <i class="fa-solid fa-chevron-right"></i>
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
         <a href="../index.html#hizmetlerimiz">Hizmetler</a>
-        <i class="fa-solid fa-chevron-right"></i>
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
         <span>Pasaport Çevirisi</span>
       </nav>
       <h1>Pasaport ve Kimlik Çevirisi</h1>
@@ -179,7 +263,7 @@
         </p>
 
         <div class="callout">
-          <i class="fa-solid fa-lightbulb"></i>
+          <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
           <div>
             <strong>Sık yapılan hata:</strong> Ad ve soyadınızın çeviride pasaportunuzdakinden farklı yazılması,
             başvurunun reddedilmesine yol açabilir. Bu nedenle kimlik belgesi çevirilerinde mutlaka pasaportunuzun bir
@@ -192,7 +276,7 @@
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">
               <span>Pasaportun tamamı mı çevrilmeli?</span>
-              <i class="fa-solid fa-plus faq-icon"></i>
+              <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
             </button>
             <div class="faq-a">
               <p>Çoğu başvuruda yalnızca fotoğraflı kimlik sayfası yeterlidir. Ancak seyahat geçmişinizin belgelenmesi
@@ -203,7 +287,7 @@
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">
               <span>Nüfus kayıt örneğine apostil gerekir mi?</span>
-              <i class="fa-solid fa-plus faq-icon"></i>
+              <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
             </button>
             <div class="faq-a">
               <p>Belge yurt dışında bir resmî kurumda kullanılacaksa ve ilgili ülke Lahey Sözleşmesi'ne taraf ise
@@ -214,7 +298,7 @@
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">
               <span>Yabancı uyrukluyum, belgelerim Türkçeye çevrilebilir mi?</span>
-              <i class="fa-solid fa-plus faq-icon"></i>
+              <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
             </button>
             <div class="faq-a">
               <p>Evet. Arapça, Rusça, Farsça, İngilizce ve diğer dillerdeki pasaport, kimlik ve nüfus belgelerinizi
@@ -226,17 +310,17 @@
 
         <h2>İlgili hizmetler</h2>
         <div class="related-grid">
-          <a href="diploma-cevirisi.html" class="related-card">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <span>Diploma &amp; Transkript Çevirisi</span>
+          <a href="dogum-belgesi-cevirisi.html" class="related-card">
+            <i class="fa-solid fa-baby" aria-hidden="true"></i>
+            <span>Doğum Belgesi Çevirisi</span>
           </a>
-          <a href="vekaletname-cevirisi.html" class="related-card">
-            <i class="fa-solid fa-file-signature"></i>
-            <span>Vekaletname &amp; Sözleşme Çevirisi</span>
+          <a href="sabika-kaydi-cevirisi.html" class="related-card">
+            <i class="fa-solid fa-file-shield" aria-hidden="true"></i>
+            <span>Sabıka Kaydı Çevirisi</span>
           </a>
-          <a href="../index.html#hizmetlerimiz" class="related-card">
-            <i class="fa-solid fa-stamp"></i>
-            <span>Tüm Tercüme Hizmetleri</span>
+          <a href="apostil-konsolosluk-onayi.html" class="related-card">
+            <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+            <span>Apostil ve Konsolosluk Onayı</span>
           </a>
         </div>
 
@@ -246,26 +330,25 @@
         <div class="side-cta">
           <h3>Aynı gün teslim</h3>
           <p>Kimlik belgeleri kısa olduğu için çoğu zaman aynı gün hazır olur. Hemen sorun.</p>
-          <a href="https://wa.me/905436439897?text=Merhaba,%20pasaport%20çevirisi%20için%20fiyat%20teklifi%20almak%20istiyorum."
-            target="_blank" rel="noopener" class="btn btn-whatsapp" data-track="whatsapp_sidebar">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp'tan Gönder
+          <a href="https://wa.me/905436439897?text=Merhaba%2C%20pasaport%20%C3%A7evirisi%20i%C3%A7in%20fiyat%20teklifi%20almak%20istiyorum." target="_blank" rel="noopener"
+            class="btn btn-whatsapp" data-track="whatsapp_sidebar">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp'tan Gönder
           </a>
           <a href="tel:+905436439897" class="btn btn-primary" data-track="phone_sidebar">
-            <i class="fa-solid fa-phone"></i> 0543 643 98 97
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> 0543 643 98 97
           </a>
           <a href="../index.html#teklif" class="side-link">
-            <i class="fa-solid fa-file-invoice"></i> Teklif formunu doldur
+            <i class="fa-solid fa-file-invoice" aria-hidden="true"></i> Teklif formunu doldur
           </a>
         </div>
 
         <div class="side-info">
           <h4>Özet Bilgi</h4>
           <ul>
-            <li><i class="fa-solid fa-clock"></i><span><strong>Süre:</strong> Genellikle aynı gün</span></li>
-            <li><i class="fa-solid fa-stamp"></i><span><strong>Onay:</strong> Yeminli, noter, apostil</span></li>
-            <li><i class="fa-solid fa-globe"></i><span><strong>Diller:</strong> 50+ dil çifti</span></li>
-            <li><i class="fa-solid fa-shield-halved"></i><span><strong>Gizlilik:</strong> Sözleşmeli tercüman</span>
-            </li>
+            <li><i class="fa-solid fa-clock" aria-hidden="true"></i><span><strong>Süre:</strong> Genellikle aynı gün</span></li>
+            <li><i class="fa-solid fa-stamp" aria-hidden="true"></i><span><strong>Onay:</strong> Yeminli, noter, apostil</span></li>
+            <li><i class="fa-solid fa-globe" aria-hidden="true"></i><span><strong>Diller:</strong> 50+ dil çifti</span></li>
+            <li><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span><strong>Gizlilik:</strong> Sözleşmeli tercüman</span></li>
           </ul>
         </div>
       </aside>
@@ -276,29 +359,35 @@
   <footer class="site-footer">
     <div class="footer-top">
       <div class="container footer-grid">
+
         <div class="footer-brand">
           <div class="footer-logo-row">
-            <img src="../assets/images/nazay-tercume-logo.png" alt="Nazay Yeminli Tercüme Logo" class="footer-logo-img"
-              loading="lazy">
+            <picture>
+              <source srcset="../assets/images/nazay-tercume-logo.webp" type="image/webp">
+              <img src="../assets/images/nazay-tercume-logo.png" alt="Nazay Yeminli Tercüme Logo"
+                class="footer-logo-img" width="481" height="440" loading="lazy" decoding="async">
+            </picture>
           </div>
           <p class="footer-desc">
-            Tüm dünya dillerinde noter, apostil ve konsolosluk işlemleri için profesyonel ve yeminli tercüme hizmetleri.
+            Tüm dünya dillerinde noter, apostil ve konsolosluk işlemleri için profesyonel ve yeminli tercüme
+            hizmetleri.
           </p>
           <div class="footer-social">
             <a href="https://www.instagram.com/nazaytercume/" target="_blank" rel="noopener" class="social-btn"
-              aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
             <a href="mailto:nazayistanbul@gmail.com" class="social-btn" aria-label="E-posta"><i
-                class="fa-solid fa-envelope"></i></a>
+                class="fa-solid fa-envelope" aria-hidden="true"></i></a>
             <a href="https://wa.me/905436439897" target="_blank" rel="noopener" class="social-btn social-wa"
-              aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+              aria-label="WhatsApp" data-track="whatsapp_footer"><i class="fa-brands fa-whatsapp"
+                aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="footer-col">
           <h4 class="footer-col-title">Hizmetlerimiz</h4>
           <ul class="footer-links">
-            <li><a href="../index.html#hizmetlerimiz">Noter Onaylı Yeminli Tercüme</a></li>
-            <li><a href="../index.html#hizmetlerimiz">Apostil ve Konsolosluk İşlemleri</a></li>
+            <li><a href="noter-onayli-tercume.html">Noter Onaylı Yeminli Tercüme</a></li>
+            <li><a href="apostil-konsolosluk-onayi.html">Apostil ve Konsolosluk İşlemleri</a></li>
             <li><a href="diploma-cevirisi.html">Diploma &amp; Transkript Çevirisi</a></li>
             <li><a href="pasaport-cevirisi.html">Pasaport &amp; Kimlik Çevirisi</a></li>
             <li><a href="vekaletname-cevirisi.html">Vekaletname &amp; Sözleşme Çevirisi</a></li>
@@ -306,25 +395,28 @@
         </div>
 
         <div class="footer-col">
-          <h4 class="footer-col-title">İletişim</h4>
-          <ul class="footer-contact-list">
-            <li><i class="fa-solid fa-phone"></i><a href="tel:+905436439897">0543 643 98 97</a></li>
-            <li><i class="fa-solid fa-envelope"></i><a href="mailto:nazayistanbul@gmail.com">nazayistanbul@gmail.com</a></li>
-            <li><i class="fa-solid fa-clock"></i><span>Pzt – Cmt: 09:00 – 21:00</span></li>
-            <li><i class="fa-solid fa-location-dot"></i><span>Murat Reis, Yeni Ocak Sk. No:39,<br>34664
-                Üsküdar/İstanbul</span></li>
+          <h4 class="footer-col-title">Belge Çevirileri</h4>
+          <ul class="footer-links">
+            <li><a href="dogum-belgesi-cevirisi.html">Doğum Belgesi Çevirisi</a></li>
+            <li><a href="evlilik-cuzdani-cevirisi.html">Evlilik Cüzdanı Çevirisi</a></li>
+            <li><a href="sabika-kaydi-cevirisi.html">Sabıka Kaydı Çevirisi</a></li>
+            <li><a href="uskudar-yeminli-tercume.html">Üsküdar Yeminli Tercüme</a></li>
+            <li><a href="../kvkk.html">KVKK &amp; Gizlilik Politikası</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4 class="footer-col-title">Nazay Business Group</h4>
-          <ul class="footer-links">
-            <li><a href="../../index.html">Grup Ana Sayfası</a></li>
-            <li><a href="../../nazaybahce/">Nazay Bahçe – Davet &amp; Organizasyon</a></li>
-            <li><a href="../index.html#sss">S.S.S.</a></li>
-            <li><a href="../kvkk.html">KVKK &amp; Gizlilik Politikası</a></li>
+          <h4 class="footer-col-title">İletişim</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:+905436439897">0543 643 98 97</a></li>
+            <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a
+                href="mailto:nazayistanbul@gmail.com">nazayistanbul@gmail.com</a></li>
+            <li><i class="fa-solid fa-clock" aria-hidden="true"></i><span>Pzt – Cmt: 09:00 – 21:00</span></li>
+            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Murat Reis, Yeni Ocak Sk. No:39,<br>34664
+                Üsküdar/İstanbul</span></li>
           </ul>
         </div>
+
       </div>
     </div>
 
@@ -338,22 +430,21 @@
 
   <nav class="mobile-bar visible" id="mobile-bar" aria-label="Hızlı İletişim">
     <a href="tel:+905436439897" class="mb-item" data-track="phone_mobilebar">
-      <i class="fa-solid fa-phone"></i><span>Ara</span>
+      <i class="fa-solid fa-phone" aria-hidden="true"></i><span>Ara</span>
     </a>
-    <a href="https://wa.me/905436439897?text=Merhaba,%20pasaport%20çevirisi%20hakkında%20bilgi%20almak%20istiyorum."
-      target="_blank" rel="noopener" class="mb-item mb-item-wa" data-track="whatsapp_mobilebar">
-      <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+    <a href="https://wa.me/905436439897?text=Merhaba%2C%20pasaport%20%C3%A7evirisi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="mb-item mb-item-wa"
+      data-track="whatsapp_mobilebar">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span>
     </a>
     <a href="../index.html#teklif" class="mb-item">
-      <i class="fa-solid fa-file-invoice"></i><span>Teklif</span>
+      <i class="fa-solid fa-file-invoice" aria-hidden="true"></i><span>Teklif</span>
     </a>
-    <a href="https://www.google.com/maps/dir/?api=1&destination=Murat+Reis+Mah.+Yeni+Ocak+Sk.+No:39+34664+%C3%9Csk%C3%BCdar+%C4%B0stanbul"
-      target="_blank" rel="noopener" class="mb-item" data-track="directions_mobilebar">
-      <i class="fa-solid fa-diamond-turn-right"></i><span>Yol Tarifi</span>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=Murat+Reis+Mah.+Yeni+Ocak+Sk.+No:39+34664+%C3%9Csk%C3%BCdar+%C4%B0stanbul" target="_blank" rel="noopener" class="mb-item" data-track="directions_mobilebar">
+      <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i><span>Yol Tarifi</span>
     </a>
   </nav>
 
-  <script src="../app.js"></script>
+  <script src="../app.js?v=20261027"></script>
 </body>
 
 </html>
