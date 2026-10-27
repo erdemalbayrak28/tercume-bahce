@@ -38,6 +38,7 @@ const NAZAY_I18N = {
     'hero.stat1': 'Dil Çifti',
     'hero.stat2': 'Hızlı Teslimat',
     'hero.stat3': 'Google Puanı',
+    'unit.hour': 'sa',
     'hero.cta1': 'Hemen İletişime Geçin',
     'hero.cta2': 'Ücretsiz Fiyat Teklifi',
 
@@ -279,6 +280,7 @@ const NAZAY_I18N = {
     'hero.stat1': 'Language Pairs',
     'hero.stat2': 'Fast Delivery',
     'hero.stat3': 'Google Rating',
+    'unit.hour': 'h',
     'hero.cta1': 'Contact Us Now',
     'hero.cta2': 'Free Price Quote',
 
@@ -519,6 +521,7 @@ const NAZAY_I18N = {
     'hero.stat1': 'زوج لغوي',
     'hero.stat2': 'تسليم سريع',
     'hero.stat3': 'تقييم جوجل',
+    'unit.hour': 'ساعة',
     'hero.cta1': 'تواصل معنا الآن',
     'hero.cta2': 'عرض سعر مجاني',
 
