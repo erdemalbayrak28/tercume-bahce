@@ -11,6 +11,7 @@
       "package.json",
       "package-lock.json",
       "README.md",
+      "nazaytercume/build/**",
       "nazaybahce/foto/DSC0*",
       "nazaybahce/foto/NAZ0*",
       "nazaybahce/foto/IMG-2025*",
